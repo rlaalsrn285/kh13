@@ -12,12 +12,15 @@ public class Test03 {
 		
 		int a = adultPriceList*adultCount; //성인가격합
 		int b = youthPriceList*youthCount; // 청소년가격합
-		int total = (adultPriceList*adultCount) + (youthPriceList*youthCount);
+		int total = a + b;
 		
 		System.out.println("청소년은"+a+"원");
 		System.out.println("성인은"+b+"원");
 		System.out.println("합"+total+"원 입니다");
 	
+		//입력 - 주어진값을변수에저장
+		//계산 
+		//출력
 	
 	
 
