@@ -14,6 +14,8 @@ public class Test04자료형 {
 		
 		//int = 111333333; 는 안된다 비트초과?암튼 범위초과
 		long b = 111111111133L;
+		
+		System.out.println(b);
 		//byte,int,long 을 주로사용하고 short는 거의 사용안함
 		//기본적으로 int사용 초과하면 long
 		//계산한결과값이 일정수를 넘어가면 뒤집힘(순환하다) 라고함 (다시찾아볼것)
