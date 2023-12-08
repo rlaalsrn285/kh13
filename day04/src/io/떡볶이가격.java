@@ -20,7 +20,7 @@ public class 떡볶이가격 {
 		int dis = 10; // 할인
 		
 		int to = ((dduk*ddukC) + (fried*fC) + (sun*sC)); //원금
-		double a = to*(dis*0.01); //할인된금액
+		double a = to*(dis*0.1); //할인된금액
 		double c = to-a;
 		
 		int aaa = (int)c;
