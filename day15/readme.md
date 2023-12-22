@@ -51,3 +51,10 @@ System.println("asd");
 
 - 순서가 있는목록(unorder list)
 - 순서가 없는목록(order list)
+
+순서가 있는목록 
+
+1. 자바
+2. 데이타베
+3. 웹
+4. 서
