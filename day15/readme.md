@@ -23,5 +23,5 @@
 언어를 설정한 코드블록은 다음과같다
 
 ```java
-System.println("asd")
+System.println("asd");
 ```
