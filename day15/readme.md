@@ -31,3 +31,9 @@ System.println("asd");
 다른 사람이했던말 옮겨적을때 사용
 
 > 개굴개굴  -개구리
+
+# 이미지
+
+이미지의 주소만 알수있다면 문서내표시가능  
+
+![](https://s3.orbi.kr/data/file/united2/f2a9b07cf7e34ee78bf5eee4080647a3.jpg)
