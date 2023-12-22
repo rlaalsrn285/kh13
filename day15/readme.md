@@ -45,4 +45,9 @@ System.println("asd");
 
 [구글 너구리](https://www.google.com/search?q=%EB%84%88%EA%B5%AC%EB%A6%AC&sca_esv=593038284&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjVy_ykzKKDAxWtslYBHe7sAdAQ_AUoAXoECAEQAw&biw=1920&bih=953&dpr=1#imgrc=Jz_6TARi2FwATM)
 
+# 목룍 표시
 
+목록은 크게 두가지로 나뉨
+
+- 순서가 있는목록(unorder list)
+- 순서가 없는목록(order list)
