@@ -16,6 +16,8 @@ import com.kh.spring05.dto.PocketmonDto;
 public class PocketmonController {
 
 	@Autowired
+	private PocketmonDao dao;
+	@Autowired
 	private JdbcTemplate jdbcTT;
 	//등록
 	//더미데이터 주소 /insert?pNo=33&pName=꼬마돌&pType=돌돌
@@ -55,14 +57,21 @@ public class PocketmonController {
 		return "포키몬등록완료";
 		
 	}
-	@Autowired
-	private PocketmonDao dao;
+	
 	@RequestMapping("/insert3")
 	public String insert3(@ModelAttribute PocketmonDto dto) {
 		
 		dao.insert(dto);
 		return "포키 등록완료";
 	}
-	
+	@RequestMapping("/delete")
+	public String delete(@RequestParam int poNo) {
+		if(dao.delete(poNo)) {
+			return "포키몬 삭제완";
+		}
+		else {
+			return "포키몬 없는번호";
+		}
+	}
 	
 }
