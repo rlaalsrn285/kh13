@@ -21,7 +21,7 @@ public class EmpController {
 	@Autowired
 	private EmpDao dao;
 	
-	//@Autowired
+	
 	@RequestMapping("/insert")
 	public String insert(@ModelAttribute EmpDto dto) {
 		
