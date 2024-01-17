@@ -22,4 +22,6 @@ public class StudentController {
 		return "학생등록";
 		//연습용 주소 /student/add?name=돌쇠&koreanScore=50&mathScore=60&englishScore=45
 	}
+	
+
 }
