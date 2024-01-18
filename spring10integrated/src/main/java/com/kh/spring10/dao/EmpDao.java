@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.kh.spring05.dto.EmpDto;
-import com.kh.spring05.mapper.EmpMapper;
+import com.kh.spring10.dto.EmpDto;
+import com.kh.spring10.mapper.EmpMapper;
 
 @Repository
 public class EmpDao {

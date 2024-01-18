@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
-import com.kh.spring05.dto.EmpDto;
+import com.kh.spring10.dto.EmpDto;
 
 @Service
 public class EmpMapper implements RowMapper<EmpDto>{
