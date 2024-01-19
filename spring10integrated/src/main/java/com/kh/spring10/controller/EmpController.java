@@ -1,5 +1,7 @@
 package com.kh.spring10.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,6 +64,21 @@ public class EmpController {
 	@RequestMapping("/editfail")
 	public String fail() {
 		return "/WEB-INF/views/emp/editfail.jsp";
+	}
+	
+	@RequestMapping ("/list")
+	public String list(@RequestParam(required = false) String ccc,
+			@RequestParam(required = false) String keykey,
+			Model aamm) {
+		
+		boolean isS = ccc !=null && keykey != null;
+		
+		List<EmpDto> listt = isS ?
+				dao.selectList(ccc,keykey) : dao.selectList();
+		
+		aamm.addAttribute("lllist", listt);
+		return "/WEB-INF/views/emp/list.jsp";
+		
 	}
 }
 

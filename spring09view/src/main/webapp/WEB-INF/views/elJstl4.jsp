@@ -19,3 +19,14 @@
 	<h1> n은 호오올수</h1>
 	</cc:otherwise>
 </cc:choose>
+
+<h1>JSTL을 이용한 반복 코드</h1>
+
+<h2>list = ${requestScope.qwe}</h2>
+<h2>list = ${qwe}</h2>
+
+
+
+<cc:forEach var="number3" items="${qwe}">
+	<h2>  nu2mber = ${number3}</h2>
+</cc:forEach>
