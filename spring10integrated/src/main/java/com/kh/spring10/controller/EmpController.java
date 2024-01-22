@@ -68,7 +68,7 @@ public class EmpController {
 	
 	@RequestMapping ("/list")
 	public String list(@RequestParam(required = false) String ccc,
-			@RequestParam(required = false) String keykey,
+					@RequestParam(required = false) String keykey,
 			Model aamm) {
 		
 		boolean isS = ccc !=null && keykey != null;
@@ -77,8 +77,20 @@ public class EmpController {
 				dao.selectList(ccc,keykey) : dao.selectList();
 		
 		aamm.addAttribute("lllist", listt);
-		return "/WEB-INF/views/emp/list.jsp";
-		
+		return "/WEB-INF/views/emp/list2.jsp";
+	}
+	
+	@RequestMapping("/detail")
+	public String dddd(@RequestParam int emempNo, Model mm) {
+		EmpDto dtdto = dao.selectOne(emempNo);
+		mm.addAttribute("empdtdto", dtdto);
+		return "/WEB-INF/views/emp/detail.jsp";
+	}
+	
+	@RequestMapping("/delete")
+	public String dfdf(@RequestParam int emNNN) {
+		dao.delete(emNNN);
+		return "redirect:list"; 
 	}
 }
 
