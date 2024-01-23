@@ -2,14 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
-    	<div>
-	<a href="emp/list">사원시스템</a>
-	<a href="menu/list">메뉴시스템</a>
-	<a href="/emp/list">사원시스템</a>
-	<a href="/menu/list">메뉴시스템</a>
-	</div>
-	
-	<div>
+  	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
     
    <c:choose>
    	<c:when test="${empdtdto != null }">
