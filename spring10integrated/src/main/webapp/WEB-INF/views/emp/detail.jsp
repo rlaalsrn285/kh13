@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
+    	<div>
+	<a href="emp/list">사원시스템</a>
+	<a href="menu/list">메뉴시스템</a>
+	<a href="/emp/list">사원시스템</a>
+	<a href="/menu/list">메뉴시스템</a>
+	</div>
+	
+	<div>
+    
    <c:choose>
    	<c:when test="${empdtdto != null }">
    		<h1>사원(emp)정보</h1>

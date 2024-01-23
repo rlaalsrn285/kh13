@@ -3,6 +3,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+	<div>
+	<a href="emp/list">사원시스템</a>
+	<a href="menu/list">메뉴시스템</a>
+	<a href="/emp/list">사원시스템</a>
+	<a href="/menu/list">메뉴시스템</a>
+	</div>
+	
+	<div>
+
 <h1>메뉴 목록</h1>
 
 <%-- 검색창 --%>

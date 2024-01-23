@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="vv" uri="http://java.sun.com/jsp/jstl/core" %>
 
+	<div>
+	<a href="emp/list">사원시스템</a>
+	<a href="menu/list">메뉴시스템</a>
+	<a href="/emp/list">사원시스템</a>
+	<a href="/menu/list">메뉴시스템</a>
+	</div>
+	
+	<div>
+
     <h1> emp 목록 테스</h1>
     
     <form action="list" method="get">
