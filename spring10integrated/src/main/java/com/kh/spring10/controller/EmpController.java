@@ -21,7 +21,7 @@ public class EmpController {
 	@Autowired
 	private EmpDao dao;
 	
-	//등록을 위한페이지? (아직이해불가)
+	//등록
 	@GetMapping("/insert")
 	public String insert() {
 		return "/WEB-INF/views/emp/insert1.jsp";

@@ -29,7 +29,9 @@
     	<vv:forEach var="qqq" items="${lllist}">
 		<tr>
 			<td>${qqq.empNo}</td>
-			<td>${qqq.empName}</td>
+			<td>
+			<a href="detail?emempNo=${qqq.empNo}">${qqq.empName}</a>
+			</td>
 			<td>${qqq.empDept}</td>
 			<td>${qqq.empDate}</td>
 			<td>${qqq.empSal}원</td>

@@ -10,7 +10,7 @@
 
 	이름 : <input name="empName"><br><br>
 	부서 : <input name="empDept"><br><br>
-	입사일(예:2022-01-01) : <input name="empDate" type="date"><br><br>
+	입사일: <input name="empDate" type="date"><br><br>
 	월급 : <input name="empSal"><br><br>
 	<button>등록</button>
 
