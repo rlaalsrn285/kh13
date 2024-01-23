@@ -34,3 +34,10 @@
     	<h2>  번호:${ppp.empNo}&nbsp;&nbsp; 이름:${ppp.empName}&nbsp;&nbsp; 부서:${ppp.empDept}  </h2>
     
     </vv:forEach>
+    
+    </div>
+	
+	<div>
+	<h1> 하단영역</h1>
+	<h1> ㅁㄴㅇㄻㄴㅇㄹ</h1>
+	</div>
