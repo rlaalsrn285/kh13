@@ -4,9 +4,10 @@
 
     <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
-	<h1>로그인페이지임</h1>
-	<cc:if test="">
-	<h2>로그인불불불가</h2>
+	<h1>로그인페이지임임임</h1>
+	
+	<cc:if test="${param.error != null}">
+	<h1>로그인 불가 이다</h2>
 	</cc:if>
 	
 	<form action="login" method="post">
