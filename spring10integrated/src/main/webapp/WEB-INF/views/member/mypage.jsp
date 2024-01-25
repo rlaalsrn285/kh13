@@ -50,6 +50,14 @@
 			<th>가입일시 칸</th>
 			<td><ffmt:formatDate value="${mmdto.memberJoin}" pattern="Y년 M월 D일 H시 M분 S초"/>
 		</tr>
+		
+		<tr>
+		<th>로그인일시</th>
+		<td>
+			<fmt:formatDate value="${memberDto.memberLogin}" 
+										pattern="Y년 M월 D일 H시 M분 S초"/>
+		</td>
+		</tr>
     
     </table>
     
