@@ -59,8 +59,8 @@
 		</tr>
     </table>
     
-    <h2><a href="#">비밀번호 변경(마이페이지미완성)</a></h2>
-	<h2><a href="#">개인정보 변경(마이페이지미완성)</a></h2>
+    <h2><a href="/member/password">비밀번호 변경</a></h2>
+	<h2><a href="/member/change">개인정보 변경(수정중)</a></h2>
 	<h2><a href="#">회원 탈퇴(마이페이지미완성)</a></h2>
     
     

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.spring10.dao.MemberDao;
 import com.kh.spring10.dto.MemberDto;
@@ -80,12 +81,49 @@ public class MemberController {
 		  //4. 마이페이지 jsp화면을 띄워라	절대경로임
 		  return "/WEB-INF/views/member/mypage.jsp";
 	  }
+	  //비밀번호변경 password.jsp띄워라
 	  @GetMapping("/password")
 	  public String password() {
 		  return "/WEB-INF/views/member/password.jsp";
 	  }
 	  
-		
+	  @PostMapping("/password")
+	  public String password(@RequestParam String originPw, @RequestParam String changePw
+			  ,HttpSession ss) {
+		  String loginId = (String) ss.getAttribute("loginId");
+		  //세션에 있는 loginId 세션에 있는거 꺼내서 loginid에 넣어라 라는뜻
+		  MemberDto ffdto = memberDao.selectOne(loginId);
+		  //세션에있는아이디 꺼낸걸 매개채삼아서 dao에서 상세조회하고 ffdto에 담아라 라는뜻
+		  boolean isvv = ffdto.getMemberPw().equals(originPw);
+		  //세션에 있는아이디의 비번과 입력받은비번이 일치하냐? 
+		  if(isvv) { //일치하면
+			  MemberDto memdtonew = new MemberDto(); //아이디와 비번을담을 임시객체를 만들어서 담는다
+			  memdtonew.setMemberId(loginId);  //여기에 세션에서 추출해낸 아이디넣고
+			  memdtonew.setMemberPw(changePw);  //여기에 입력받은 바꿀 비밀번호넣고
+			  memberDao.updateMemberPw(memdtonew); //memdao에 잇는 비번변경메서드실행하고
+			return "redirect:passwordFinish";  // 상대경로 passwordFinish url로 가라
+		  }
+		  else {//비번이 일치하지않으면
+			  return "redirect:password?error";  // 상대경로 password?error  url을 띄워라 error가 url에 잇으면 비번틀렷다고 뜨게jsp파일작성햇을거임
+		  }
+	  }
+	  @RequestMapping("/passwordFinish")  //여기페이지오면
+	  public String paswordfinish() {    //밑에 jsp파일 화면띄워라
+		  return "/WEB-INF/views/member/passwordFinish.jsp";
+	  }
+	  //개인정보변경
+	  @GetMapping("/change")
+	  public String change(Model mm, HttpSession ss) {
+		  //세션에 있는 아이디 추출해서 lll에 담기
+		  String lll = (String) ss.getAttribute("loginId");
+		  //   세션아디 즉 lll을 상세조회한것을 mdto에 넣기 
+		  MemberDto mdto = memberDao.selectOne(lll);
+		  mm.addAttribute("mmmdto", mdto);
+		  //mmmdto라는 이름에다가 mdto 즉 lll을 상세조회한 개체 넣기
+		  return "/WEB-INF/views/member/change.jsp";
+		  // change.jsp 화면 띄워라
+	  }
+	  
 	  }
 	  
 	  

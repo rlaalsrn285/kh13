@@ -16,13 +16,13 @@
 	</div>
 		<cc:choose>
 			<cc:when test="${sessionScope.loginId != null}">
-				<a href="/member/logout">로그아웃링크</a>
-				<a href="/member/mypage">내정보링크(수정중)</a>
+				<a href="/member/logout">로그아웃</a>
+				<a href="/member/mypage">마이페이지</a>
 			</cc:when>
 			
 			<cc:otherwise>
-			<a href="/member/join">회원가입칸 링크</a>
-			<a href="/member/login">로그인칸 링크</a>
+			<a href="/member/join">회원가입</a>
+			<a href="/member/login">로그인</a>
 			</cc:otherwise>
 		</cc:choose>
 		
