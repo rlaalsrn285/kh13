@@ -54,13 +54,14 @@
 		<tr>
 		<th>로그인일시</th>
 		<td>
-			<fmt:formatDate value="${memberDto.memberLogin}" 
-										pattern="Y년 M월 D일 H시 M분 S초"/>
+			<ffmt:formatDate value="${memberDto.memberLogin}" pattern="Y년 M월 D일 H시 M분 S초"/>
 		</td>
 		</tr>
-    
     </table>
     
+    <h2><a href="#">비밀번호 변경(마이페이지미완성)</a></h2>
+	<h2><a href="#">개인정보 변경(마이페이지미완성)</a></h2>
+	<h2><a href="#">회원 탈퇴(마이페이지미완성)</a></h2>
     
     
     <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

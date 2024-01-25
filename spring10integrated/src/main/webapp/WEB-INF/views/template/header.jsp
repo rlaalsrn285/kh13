@@ -13,12 +13,19 @@
 	<a href="/">홈주소</a>
 	<a href="/emp/list">사원시스템</a>
 	<a href="/menu/list">메뉴시스템</a>
-	<a href="/member/login">로그인칸 링크</a>
 	</div>
 		<cc:choose>
 			<cc:when test="${sessionScope.loginId != null}">
 				<a href="/member/logout">로그아웃링크</a>
 				<a href="/member/mypage">내정보링크(수정중)</a>
 			</cc:when>
+			
+			<cc:otherwise>
+			<a href="/member/join">회원가입칸 링크</a>
+			<a href="/member/login">로그인칸 링크</a>
+			</cc:otherwise>
 		</cc:choose>
+		
+			로그인 상태 = ${sessionScope.loginId != null} //// 
+			로그인아디 = ${sessionScope.loginId}
 	<div>

@@ -79,10 +79,13 @@ public class MemberController {
 		  mm.addAttribute("mmdto", memdto);
 		  //4. 마이페이지 jsp화면을 띄워라	절대경로임
 		  return "/WEB-INF/views/member/mypage.jsp";
-		  
-		  
+	  }
+	  @GetMapping("/password")
+	  public String password() {
+		  return "/WEB-INF/views/member/password.jsp";
 	  }
 	  
+		
 	  }
 	  
 	  
