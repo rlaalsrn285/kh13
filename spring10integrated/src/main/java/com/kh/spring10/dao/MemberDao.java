@@ -62,11 +62,36 @@ public class MemberDao {
 			Object[] data = {dto.getMemberPw(), dto.getMemberId()};
 			return jdbctt.update(sql, data) > 0;
 		}
-
+		//회원탈퇴
 		public boolean delete(String memberId) {
 			String sql = "delete member where member_id = ?";
 			Object[] data = {memberId};
-			return jdbctt	.update(sql, data) > 0;
+			return jdbctt.update(sql, data) > 0;
+		}
+		//여기서부턴 걍 복붙
+		
+		//최종로그인시각 변경(수정, Update)
+		public boolean updateMemberLogin(String memberId) {
+			String sql = "update member "
+							+ "set member_login=sysdate "
+							+ "where member_id = ?";
+			Object[] data = {memberId};
+			return jdbctt.update(sql, data) > 0;
+		}
+		//회원이 자신의 정보를 변경(수정, Update)
+		public boolean updateMember(MemberDto memberDto) {
+			String sql = "update member set "
+								+ "member_nick=?, member_email=?, member_birth=?, "
+								+ "member_contact=?, member_post=?, "
+								+ "member_address1=?, member_address2=? "
+							+ "where member_id = ?";
+			Object[] data = {
+				memberDto.getMemberNick(), memberDto.getMemberEmail(),
+				memberDto.getMemberBirth(), memberDto.getMemberContact(),
+				memberDto.getMemberPost(), memberDto.getMemberAddress1(),
+				memberDto.getMemberAddress2(), memberDto.getMemberId()
+			};
+			return jdbctt.update(sql, data) > 0;
 		}
 
 }

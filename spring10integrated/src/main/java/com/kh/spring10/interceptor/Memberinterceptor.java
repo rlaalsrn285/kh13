@@ -19,6 +19,7 @@ public class Memberinterceptor implements HandlerInterceptor{
 		return true;
 		}
 		else {
+			response.sendRedirect("/member/login");
 			return false;
 		}
 	}

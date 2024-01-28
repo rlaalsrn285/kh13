@@ -13,10 +13,16 @@ public class interceptorConfiguration implements WebMvcConfigurer{
 	
 	@Autowired
 	private Memberinterceptor mminter;
-	
-	/*@Override
+	//현재 이해못함 걍복붙한거
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(mminter).*/
+		registry.addInterceptor(mminter)
+		.addPathPatterns("/member/**")
+		.excludePathPatterns(
+				//"/member/join", "/member/joinFinish",
+				"/member/join*",
+				"/member/login", "/member/exitFinish"
+		);
+	}
 		
 	}
 
