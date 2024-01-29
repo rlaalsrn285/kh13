@@ -18,9 +18,9 @@
 		<div>
 			<%-- 템플릿 페이지는 무조건 절대경로를 써야한다 --%>
 			<a href="/">홈으로</a>
-			<a href="/pocketmon/list">포켓몬스터 시스템</a>
-			<a href="/emp/list">사원관리 시스템</a>
-			<a href="/menu/list">메뉴관리 시스템</a>
+			<a href="/pocketmon/list">포켓몬스터 시스템(구현안함)</a>
+			<a href="/emp/list">사원관리 시스템(구현안함)</a>
+			<a href="/menu/list">메뉴관리 시스템(구현안함)</a>
 			<a href="/student/list">학생관리 시스템</a>
 		</div>
 		<%-- 로그인 여부에 따라 달라지는 메뉴 --%>
