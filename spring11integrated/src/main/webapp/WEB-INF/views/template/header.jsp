@@ -40,9 +40,9 @@
 		<c:if test="${sessionScope.loginLevel == '관리자'}">
 		<div>
 			<a href="#">회원관리</a>
-			<a href="/admin/stat/pocketmon">포켓몬통계</a>
-			<a href="/admin/stat/emp">사원통계</a>
-			<a href="/admin/stat/menu">메뉴통계</a>
+			<a href="/admin/stat/pocketmon">포켓몬통계(미구현)</a>
+			<a href="/admin/stat/emp">사원통계(미구현)</a>
+			<a href="/admin/stat/menu">메뉴통계(미구현)</a>
 			<a href="/admin/stat/member">회원통계</a>
 		</div>		
 		</c:if>
