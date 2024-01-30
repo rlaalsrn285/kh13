@@ -1,4 +1,4 @@
-package interceptor;
+package com.kh.spring11.interceptor;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
