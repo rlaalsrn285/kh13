@@ -43,6 +43,6 @@ public class BoardDao {
 	public List<BoardDto> selectList(String column, String keyword){
 		String sql = "select * from board where instr("+column+", ?) > 0 order by board_no desc";
 		Object[] data = {keyword};
-		return jdbcTemplate.query(sql, mapper, data);
+		return jdbcTemplate.query(sql, boardMapper, data);
 	}
 }
