@@ -1,6 +1,10 @@
 package com.kh.spring11.dto;
 
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class BoardDto {
 	
@@ -60,6 +64,27 @@ public class BoardDto {
 		this.boardReadcount = boardReadcount;
 	}
 	
+	public String getBoardWriterStr() {
+		if(boardWriter == null)
+			return "탈퇴한사용자";
+		else
+			return boardWriter;
+	}
+	
+	public String getBoardWtimeStr() {
+		LocalDate today = LocalDate.now();//오늘날짜
+		LocalDate wtime = boardWtime.toLocalDate();//작성일자
+		if(wtime.equals(today)) {//작성일이 오늘이면
+			//Date ---> Timestamp ---> LocalDateTime ---> LocalTime
+			Timestamp stamp = new Timestamp(boardWtime.getTime());
+			LocalDateTime time = stamp.toLocalDateTime();
+			LocalTime result = time.toLocalTime();
+			return result.toString();//시간 반환
+		}
+		else {//작성일이 이전이면
+			return wtime.toString();//날짜 반환
+		}
+	}
 	
 
 }
