@@ -126,4 +126,12 @@ public class MemberDao {
 		};
 		return jdbcTemplate.update(sql, data) > 0;
 	}
+
+	public void connect(String memberId, int attachNo) {
+		String sql = "insert into member_attach(member_id, attach_no) "
+				+ "values(?, ?)";
+		Object[] data = {memberId, attachNo};
+		jdbcTemplate.update(sql, data);
+		
+	}
 }

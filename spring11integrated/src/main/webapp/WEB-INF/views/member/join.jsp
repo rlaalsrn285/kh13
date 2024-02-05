@@ -5,7 +5,7 @@
 
 <h1>회원 정보 입력</h1>
 
-<form action="join" method="post">
+<form action="join" method="post" enctype="multipart/form-data">
 	아이디 * <input type="text" name="memberId" placeholder="소문자 시작, 숫자 포함 8~20자" required> <br><br>
 	비밀번호 * <input type="password" name="memberPw" placeholder="대소문자,숫자,특수문자 포함 6~15자" required><br><br>
 	닉네임 * <input type="text" name="memberNick" placeholder="한글숫자 2~10자" required> <br><br>
@@ -16,6 +16,7 @@
 	<input type="text" name="memberPost" placeholder="우편번호"> <br><br>
 	<input type="text" name="memberAddress1" placeholder="기본주소"> <br><br>
 	<input type="text" name="memberAddress2" placeholder="상세주소"> <br><br>
+	사진이미지<input type="file" name="attach" accept="image/*">
 	<button>회원가입</button>
 </form>
 

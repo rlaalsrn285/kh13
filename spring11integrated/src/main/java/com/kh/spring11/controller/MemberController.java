@@ -1,5 +1,8 @@
 package com.kh.spring11.controller;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,8 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.spring11.dao.AttachDao;
 import com.kh.spring11.dao.MemberDao;
+import com.kh.spring11.dto.AttachDto;
 import com.kh.spring11.dto.MemberDto;
 
 import jakarta.servlet.http.HttpSession;
@@ -20,6 +26,8 @@ public class MemberController {
 
 	@Autowired
 	private MemberDao memberDao;
+	@Autowired
+	private AttachDao attachDao;
 	
 	//회원가입
 	@GetMapping("/join")
@@ -27,8 +35,29 @@ public class MemberController {
 		return "/WEB-INF/views/member/join.jsp";
 	}
 	@PostMapping("/join")
-	public String join(@ModelAttribute MemberDto memberDto) {
+	public String join(@ModelAttribute MemberDto memberDto,
+			@RequestParam MultipartFile attach
+			) throws IllegalStateException, IOException {
 		memberDao.insert(memberDto);
+		
+		if(!attach.isEmpty()) {
+			int attachNo = attachDao.getSequence();
+			File dirr = new File(System.getProperty("user.home", "memmem"));
+			dirr.mkdir();
+			File targett = new File(dirr, String.valueOf(attachNo));
+			attach.transferTo(targett); 
+			
+			AttachDto attachDto = new AttachDto();
+			attachDto.setAttachNo(attachNo);
+			attachDto.setAttachName(attach.getOriginalFilename());
+			attachDto.setAttachType(attach.getContentType());
+			attachDto.setAttachSize(attach.getSize());
+			
+			attachDao.insert(attachDto);
+			
+			memberDao.connect(memberDto.getMemberId(), attachNo);
+			
+		}
 		return "redirect:joinFinish";
 	}
 	@RequestMapping("/joinFinish")
