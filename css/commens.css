@@ -1,4 +1,11 @@
+/*
+    KH정보교육원 당산지원 C강의장 수업자료
+
+    만든이 - 피카츄
+    만든날짜 - 2024.02.07
+*/
 @charset "UTF-8";
+
 /* 전체 선택자 - 모든 태그에 설정(전체 규칙) */
 * {
     box-sizing: border-box;
@@ -12,7 +19,6 @@
     - 컨테이너는 가운데 배치되도록 구현
 */
 .container {
-    border: 1px dotted gray;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,7 +29,6 @@
     - 셀과 셀 사이에는 일정 크기의 여백이 필요
 */
 .cell {
-    border: 1px dotted gray;
     margin-top: 10px;
     margin-bottom: 10px;
 }
