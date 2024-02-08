@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠팡 로그인</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        .tool, .btn {
+            font-size: 16px;
+        }
+        .cell {
+            margin: 20px 0;
+        }
+        .btn.positive {
+            background-color: rgb(52, 106, 255);
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        /* 
+            .title 안에 있는 첫 번째 태그가 span이라면 
+            특정 대상의 내부에 있는 태그를 찾고 싶다면 자식선택자( > )를 사용
+            영역 단위로 디자인을 할 때 사용한다
+        */
+        .title > span:nth-child(1) { color: rgb(147,82, 39); }
+        .title > span:nth-child(2) { color: rgb(247, 85, 47); }
+        .title > span:nth-child(3) { color: rgb(255, 196, 0); }
+        .title > span:nth-child(4) { color: rgb(136, 204, 47); }
+        .title > span:nth-child(5) { color: rgb(49, 180, 221); }
+
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post" autocomplete="off">
+    <div class="container w-400">
+        <div class="cell center title">
+            <!-- <img src="image/coupang.png" width="45%"> -->
+            <span>cou</span><span>p</span><span>a</span><span>n</span><span>g</span>
+        </div>
+        <div class="cell">
+            <input type="text" name="memberId" placeholder="아이디(이메일)" class="tool w-100">
+        </div>
+        <div class="cell">
+            <input type="text" name="memberPw" placeholder="비밀번호" class="tool w-100">
+        </div>
+        <div class="cell">
+            <button class="btn positive w-100">로그인</button>
+        </div>
+        <hr>
+        <div class="cell">
+            <button class="btn w-100">회원가입</button>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>
