@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        .image-circle{
+            border-radius: 50%;
+        }
+        .image-round{
+            border-radius: 15px;
+        }
+        .image-grayscale{
+            filter: grayscale(100%);
+        }
+        .image-blur{
+            opacity: 0.1;
+            transition: opacity 2s linear;
+        }
+        .image-blur.hover:hover{
+            opacity: 0.3;
+        }
+        .image-shadow{
+            box-shadow: 10px 10px 0 0 blue;
+        }
+        .image-lift{
+            box-shadow: 0 0 60px 10px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container w-600">
+        <div class="cell center">
+            <h1>이미지</h1>
+        </div>
+        <img class="image-circle" src="iimmgg/qqqq.png" width="150" height="150">
+        <img class="image-round" src="iimmgg/qqqq.png" width="150" height="150">
+        <img class="image-grayscale" src="iimmgg/qqqq.png" width="150" height="150">
+        <img class="image-blur hover" src="iimmgg/qqqq.png" width="150" height="150">
+        <img class="image-shadow" src="iimmgg/qqqq.png" width="150" height="150">
+        <img class="image-lift" src="iimmgg/qqqq.png" width="150" height="150">
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 네비디자인12345</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        .page-navigator{
+            text-align: center;
+            font-size: 18px;
+        }
+        .page-navigator > a{
+           display: inline-block;
+           color: green;
+           text-decoration: none;
+           border: 1px solid green;
+            min-width: 2.2em;
+           padding: 0.5em;
+        }
+        .page-navigator > a.on,
+        .page-navigator > a:hover
+        {
+            color: rebeccapurple;
+            border-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container w-800">
+        <div class="cell center">
+            <h1>페이지네비디자인</h1>
+        </div>
+        <div class="cell">
+            <div class="page-navigator">
+                <a href="#">&lt;이전</a>
+                <a href="#">1</a>
+                <a href="#" class="on">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <a href="#">다음&gt;</a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
