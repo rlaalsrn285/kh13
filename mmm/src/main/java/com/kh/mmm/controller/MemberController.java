@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.mmm.dao.AttachDao;
+import com.kh.mmm.dao.BuyDao;
 import com.kh.mmm.dao.MemberDao;
 import com.kh.mmm.dto.MemberDto;
 import com.kh.mmm.service.AttachService;
