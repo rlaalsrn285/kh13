@@ -1,0 +1,139 @@
+/*
+    KH정보교육원 당산지원 C강의장 수업자료
+
+    만든이 - 피카츄
+    만든날짜 - 2024.02.07
+*/
+@charset "UTF-8";
+
+/* 전체 선택자 - 모든 태그에 설정(전체 규칙) */
+* {
+    box-sizing: border-box;
+    font-family: 빙그레 메로나체, sans-serif;
+}
+
+/* 
+    컨테이너(.container)
+    - 가장 작은 화면의 단위
+    - 내부에는 반드시 한 줄에 하나씩 도구들이 배치된다
+    - 컨테이너는 가운데 배치되도록 구현
+*/
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+    셀(.cell)
+    - 컨테이너의 내부에 배치되는 한 줄
+    - 셀과 셀 사이에는 일정 크기의 여백이 필요
+*/
+.cell {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*
+    폭 스타일
+    - 컨테이너와 컴포넌트 등 다양한 상황에 쓸 수 있는 폭을 미리 정의
+    - 최저 200px부터 최고 1200px까지 50px단위로 제작
+    - 100 이하의 숫자는 %로 인식하도록 구현
+*/
+.w-200 { width: 200px; }
+.w-250 { width: 250px; }
+.w-300 { width: 300px; }
+.w-350 { width: 350px; }
+.w-400 { width: 400px; }
+.w-450 { width: 450px; }
+.w-500 { width: 500px; }
+.w-550 { width: 550px; }
+.w-600 { width: 600px; }
+.w-650 { width: 650px; }
+.w-700 { width: 700px; }
+.w-750 { width: 750px; }
+.w-800 { width: 800px; }
+.w-850 { width: 850px; }
+.w-900 { width: 900px; }
+.w-950 { width: 950px; }
+.w-1000 { width: 1000px; }
+.w-1050 { width: 1050px; }
+.w-1100 { width: 1100px; }
+.w-1150 { width: 1150px; }
+.w-1200 { width: 1200px; }
+
+.w-100 { width:100%; }
+.w-75 { width:75%; }
+.w-50 { width:50%; }
+.w-33 { width:33.3333%; }
+.w-25 { width:25%; }
+
+/*
+    입력창과 버튼 스타일
+    - 입력창 - .tool
+    - 버튼 - .btn
+*/
+.tool , .btn {
+    font-size: 20px;
+    padding: 0.5em 1em;
+    outline: none;/*선택시 자동강조효과 제거*/
+    border: 1px solid #636e72;
+    border-radius: 0.1em;
+}
+
+/* 입력창은 focus 효과가 발생할 때 테두리를 강조 */
+.tool:focus {
+    border-color: #2d3436;
+}
+
+/*
+    버튼은 크게 세 가지 용도로 구분한다
+    1. 긍정버튼 - 누르면 긍정적인 작업이 발생하는 경우(순리대로 흘러가는 경우)
+    2. 부정버튼 - 누르면 작업이 중단되거나 위험한 일이 발생하는 경우
+    3. 중립버튼 - 긍정도 부정도 아닌 제 3의 작업이 발생하는 경우
+
+    그냥 .btn은 중립버튼으로 처리한다
+    긍정버튼은 .btn 뒤에 .positive 추가
+    부정버튼은 .btn 뒤에 .negative 추가
+
+    마우스가 버튼에 올라가면(hover) 강조 효과 부여
+*/
+
+.btn {/* a태그를 버튼으로 쓸 경우 */
+    color: #2d3436;
+    text-decoration: none; /* 밑줄 제거 */
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn.positive {
+    border:1px solid #00b894;
+    background-color: #00b894;
+    color: white;
+}
+.btn.negative {
+    border:1px solid #d63031;
+    background-color: #d63031;
+    color: white;
+}
+
+/* 버튼에 마우스가 올라가면 색상의 변화를 주겠다 */
+.btn:hover {
+    background-color: #e5e5e5;
+}
+.btn.positive:hover {
+    background-color: #00a585;
+}
+.btn.negative:hover {
+    background-color: #c42627;
+}
+
+/*
+    정렬 스타일
+    - .left를 붙이면 왼쪽 정렬
+    - .center를 붙이면 가운데 정렬
+    - .right를 붙이면 오른쪽 정렬
+*/
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
