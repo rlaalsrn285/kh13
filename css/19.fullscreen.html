@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체화면 가리기</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        /*
+            화면 위의 화면(overlay) 디자인
+            뒤가 비치게 만드는 방법은 두 가지가 있다
+            (1) 불투명도(opacity) 조절 - 내용물도 영향을 받는다
+            (2) 배경색에 알파(alpha) 조절 - rgba 사용
+        */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99999999;
+        }
+        .overlay > .container {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        /*
+            오버레이 안에 배치되는 .component는 한가운데 위치하도록 구현
+            가운데 배치하는 방법도 여러 가지가 있다
+            (1) top, left, margin을 사용하는 방법
+            (2) top, left, transform을 사용하는 방법
+        */
+        .overlay > .component {
+            position: absolute;
+
+            /* 
+                (1)번 방식 - 크기가 고정이어야 하지만 모든브라우저에서 작동 
+                top: 50%;
+                left: 50%;
+                margin-left: -100px;
+                margin-top: -100px;
+
+                (2)번 방식 - 크기와 무관하게 정렬되며 1번보다 안되는 경우가 있음
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+
+                (3)번 방식 - display:flex 사용하는 방법
+                (4)번 방식 - display:grid 사용하는 방법
+            */
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>화면 보호기</h1>
+        </div>
+        <div class="cell">
+            <a class="link" href="https://www.google.com">구글로 이동</a>
+        </div>
+    </div>
+
+    <!-- 화면 전체를 가릴 수 있도록 영역을 구현 -->
+    <div class="overlay">
+        <!-- 영역 안에는 container를 배치하여 새로운 화면을 구현 -->
+        <!--
+        <div class="container w-400">
+            <div class="cell">
+                <h1>오버레이 화면 제목</h1>
+            </div>
+            <div class="cell">
+                내용
+            </div>
+        </div>
+        -->
+
+        <!-- 정중앙에 배치하고 싶다면 .component를 배치 -->
+        <img class="component" src="image/loading.gif" width="100" height="100">
+    </div>
+
+</body>
+</html>
