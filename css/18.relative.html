@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        .effect-lift{
+            position: relative;
+            z-index: 40;
+            transition: bottom 0.5s ease-out;
+            bottom: 0px;
+        }
+        .effect-lift:hover{
+            bottom: 10px;
+        }
+        .effect-shake{
+            position: relative;
+            z-index: 55;
+        }
+        .effect-shake:hover{
+            animation:shake linear 0.1s infinite;
+        }
+        @keyframes shake{
+            0%{left: 0px;}
+            25%{left: -2px;}
+            50%{left:0px}
+            75%{left:3px}
+            100%{left:0px}
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>relative position</h1>
+        </div>
+
+        <div class="cell">
+            <img class="effect-lift" src="iimmgg/umum.jpg" width="120">
+        </div>
+
+        <div class="cell">
+            <img class="effect-shake" src="iimmgg/zzzz.jpg" width="120">
+        </div>
+
+
+    </div>
+    
+
+</body>
+</html>
