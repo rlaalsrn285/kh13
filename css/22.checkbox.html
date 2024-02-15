@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+    .c1 + span{color: red;}
+    .c1:checked + span{color: blue;}
+
+    .c3{
+        display: none;
+    }
+    .c3 + div{
+        width: 140px;
+        height: 350px;
+        background-color: aquamarine;
+        position: fixed;
+        left: -150px;
+        transition: left 0.5s ease-out;
+    }
+    .c3:checked + div{
+        left: 0;
+    }
+    .c3 ~ label{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 23;
+    }
+    </style>
+</head>
+<body>
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>쳌쳌밬스</h1>
+        </div>
+        <div class="cell">
+            <input type="checkbox" class="c1">
+            <span>모든이용</span>
+        </div>
+        <div class="cell">
+            <label for="ck33">=</label>
+            <input type="checkbox" class="c3" id="ck33">
+            
+            <div>
+                ㅁㄴㅇㄻㄴㅇㄹ
+            </div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>

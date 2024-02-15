@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요기요오</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        .floating-cell::after {
+            content: ""; /* 태그 종료 시점의 가상영역을 생성하고 */
+            display: block; /* div처럼 block 상태로 만들고 */
+            clear: both; /* 사용한 float 속성을 모두 제거 */
+        }
+        .ff-20{
+            float: left ;
+            width: 15%;
+            margin-top: 20px;
+        }
+        .ff-65{
+            float: left ;
+            width: 85%;
+            margin-top: 25px;
+        }
+        .ff-15{
+            float: left ;
+            width: 15%;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container w-700" style="height: 120px;">
+        <div class="floating-cell">
+        <div class="ff-20">
+            <img src="iimmgg/nnn.png" style="width: 60%; height: auto;">
+        </div>
+
+        <div class="ff-65">
+           <div style="font-size: 20px;"> 상하이몽</div>
+            <div>별이5개 l 리뷰222 l 사장님댓글32</div>
+            <div>요기서결제 l 15,500원 이상 배달</div>
+            <div style="text-align: right;" >40~45분</div>
+        </div>
+
+
+    </div>
+    </div>
+    
+
+</body>
+</html>

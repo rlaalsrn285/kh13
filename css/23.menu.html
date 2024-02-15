@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 디자인</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+     
+    <style>
+        /*
+            메뉴는 계층형 구조(tree)이다
+            계층형 구조를 표현하기에 가장 적합한 태그는 list 태그이다
+            - <ul>은 순서가 없는 리스트 태그(unorder list)
+            - <ol>은 순서가 있는 리스트 태그(order list)
+        */
+
+        /* 메뉴 안에 있는 모든 ul 태그에 대한 디자인 초기화 */
+        .menu, 
+        .menu ul {
+            list-style: none; /*list에 표기되는 모양 제거 */
+            margin: 0; /* 기본 여백 제거 */
+            padding: 0; /* 기본 여백 제거 */
+        }
+        .menu a {
+            color: inherit; /* 글자색상은 외부상태를 따라가겠다 */
+            text-decoration: none; /* 밑줄을 제거하겠다 */
+            display: inline-block; /* 크기 설정이 가능하도록 변경 */
+        }
+
+        /* 1차 메뉴(.menu > li)를 가로로 배치 */
+        .menu > li {
+            display:inline-block;
+        }
+
+        /*
+            모든 메뉴는 li 안에 a와 ul이 있다
+            li끼리는 연관배치, ul은 절대배치를 사용한다
+        */
+        .menu li {
+            position: relative;
+        }
+        .menu li > ul {
+            position: absolute;
+        }
+
+        /*
+            메뉴의 글자크기와 폭을 지정
+        */
+        .menu,
+        .menu ul {
+            background-color: #2d3436;
+        }
+        .menu li {
+            font-size: 24px;
+            width: 200px;
+            color: white;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        /* 2차 이상의 메뉴(.menu li > ul)를 숨김 처리 */
+        .menu li > ul {
+            display:none;
+        }
+
+        /* 
+            모든 메뉴(.menu li)에 
+            마우스가 올라가면(:hover) 
+            하위 메뉴(ul)를 표시하도록 처리 
+        */
+        .menu li:hover > ul {
+            display: block; 
+        }
+
+        /* 모든 메뉴에 마우스가 올라가면 강조 표시 */
+        .menu li:hover {
+            background-color: #636e72;
+        }
+
+        /* 2차 메뉴(ul)의 위치를 미세조정 */
+        .menu > li > ul {
+            top:100%;
+            left: 0;
+        }
+        /* 3차 이상의 메뉴(ul)의 위치를 미세조정 */
+        .menu > li > ul > li ul {
+            top: 0;
+            left: 100%;
+        }
+
+        /* 혹시 메뉴에 글자가 많아서 넘어가는 경우를 말줄임표 처리 */
+        .menu a {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* menu-end 클래스가 붙은 메뉴 한 개만큼은 우측으로 붙여서 처리 */
+        .menu {
+            /* 메뉴를 원하는 위치에 배치하고 싶다면 */
+            position: relative;
+
+            /* 메뉴를 상단에 고정하고 싶다면 */
+            /*
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            */
+        }
+        .menu li.menu-end {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* 우측 메뉴는 3차 이상의 메뉴가 왼쪽에 나오도록 처리 */
+        .menu > li.menu-end > ul > li ul {
+            top: 0;
+            left: auto;
+            right: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#">데이터관리</a>
+            <ul>
+                <li><a href="#">포켓몬스터</a></li>
+                <li><a href="#">사원정보</a></li>
+                <li><a href="#">메뉴정보</a></li>
+                <li><a href="#">학생성적</a></li>
+            </ul>
+        </li>
+        <li><a href="#">자유게시판</a></li>
+        <li class="menu-end">
+            <a href="#">관리자메뉴</a>
+            <ul>
+                <li><a href="#">회원관리</a></li>
+                <li><a href="#">충전상품관리</a></li>
+                <li>
+                    <a href="#">통계</a>
+                    <ul>
+                        <li><a href="#">포켓몬통계</a></li>
+                        <li><a href="#">사원통계</a></li>
+                        <li><a href="#">메뉴통계</a></li>
+                        <li><a href="#">회원통계</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">로그인</a>
+            <ul>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">??? 님</a>
+            <ul>
+                <li><a href="#">마이페이지</a></li>
+                <li><a href="#">포인트충전</a></li>
+                <li><a href="#">로그아웃</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>

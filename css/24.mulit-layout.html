@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다단 배치 구현하기</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* inline이 들어간 요소들 사이에는 기본 간격이 존재한다 */
+        .box1 {
+            display: inline-block;
+            width: 49.5%;
+        }
+
+        /*
+            floating 배치
+            - 기존 배치 규칙을 무시하고 공중에 띄워서 배치하는 방식
+            - 어떤 대상이든 float가 설정되면 display는 block이 된다
+            - float에는 left/right를 적어 배치될 방향을 지정할 수 있다
+            - (중요) float는 이후의 배치에 영향을 미치므로 다 쓰고 나면 정리해야함
+        */
+        .box2 {
+            float: left;
+            width: 50%;
+        }
+
+        .clearbox {
+            /* clear에 left, right 또는 both를 적어서 float의 사용이 종료되었음을 표시 */
+            clear: both;
+        }
+
+        /* 
+            float 모듈 디자인
+            - float를 사용하고 싶다면 div에 floating-cell이라는 클래스를 부여
+            - 영역이 끝나는 시점에 자동으로 clear를 수행하도록 디자인
+            - 가상 선택자인 ::after를 사용하여 강제 영역 생성 후 clear 수행
+        */
+        .floating-cell::after {
+            content: ""; /* 태그 종료 시점의 가상영역을 생성하고 */
+            display: block; /* div처럼 block 상태로 만들고 */
+            clear: both; /* 사용한 float 속성을 모두 제거 */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>다단 배치 디자인</h1>
+        </div>
+        <div class="cell">
+            <h2>inline block 배치</h2>
+        </div>
+        <div class="cell">
+            <div class="box1">1단</div>
+            <div class="box1">2단</div>
+        </div>
+
+        <div class="cell">
+            <h2>floating 배치</h2>
+        </div>
+        <div class="cell">
+            <div class="box2">
+                1단<br>
+                1단<br>
+                1단<br>
+                1단<br>
+                1단<br>
+            </div>
+            <div class="box2">2단</div>
+        </div>
+
+        <!-- float의 사용이 끝났음을 알리기 위해 만든 임시 태그 -->
+        <div class="clearbox"></div>
+
+        <div class="cell">
+            <h2>다음 컨텐츠</h2>
+        </div>
+        <div class="cell">
+            다음 컨텐츠의 내용
+        </div>
+
+
+        <div class="cell">
+            <h2>floating 배치</h2>
+        </div>
+        <!-- 어짜피 float는 일반 태그와 어울리기 힘드니 표시된 영역에서만 사용 -->
+        <div class="cell floating-cell">
+            <div class="box2">
+                1단<br>
+                1단<br>
+                1단<br>
+                1단<br>
+                1단<br>
+            </div>
+            <div class="box2">2단</div>
+        </div>
+
+        <div class="cell">
+            <h2>다음 컨텐츠</h2>
+        </div>
+        <div class="cell">
+            다음 컨텐츠의 내용
+        </div>
+    </div>
+
+</body>
+</html>
