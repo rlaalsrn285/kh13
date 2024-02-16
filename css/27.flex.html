@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="commens.css">
     <link rel="stylesheet" type="text/css" href="test.css">
     <style>
-       .area1{
+        .area1{
             display: flex;
         }
         .area2{
@@ -41,25 +41,45 @@
         .flex-cell.vertical{
             flex-direction: column;
         }
-        .flex-cell.horizontal{
-            flex-direction: row;
-        } 
     </style>
 </head>
 <body>
-    <div class="container w-600">
-        <div><h1>요기요 가게리스트</h1></div>
-        <div class="cell flex-cell">
-            <div style="width: 120px; height: 100px; padding-top: 35px;">
-                <img src="iimmgg/qqqq.png" width="100%">
-            </div>
-
-            <div class=" flex-cell horizontal">
-                요리왕왕
-            </div>
-
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>flexible임</h1>
+        </div>
+        <div class="cell area1">
+            <div class="w-50">11</div>
+            <div class="w-50">22</div>
+        </div>
+        <div class="cell area2">
+            <div class="w-50">11</div>
+            <div class="w-50">22</div>
+            <div class="w-50">33</div>
+            <div class="w-50">44</div>
         </div>
 
+        <div class="cell area3">
+            <div>11</div>
+            <div>22</div>
+            <div>33</div>
+            <div>44</div>
+        </div>
+
+        <div class="cell area4">
+            <div style="height: 200px;">11</div>
+            <div>22</div>
+            <div>33</div>
+            <div class="width-fill">44</div>
+        </div>
+
+        <div class="cell flex-cell">
+            <div>11</div>
+            <div>22</div>
+            <div>33</div>
+            <div>44</div>
+        </div>
+    
     </div>
     
 </body>
