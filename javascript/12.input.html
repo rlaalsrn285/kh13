@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+    <style>
+        
+    </style>
+    <script>
+        function checkText(){
+            var inputTarget = document.querySelector(".temp");
+            var text = inputTarget.value;
+           
+            var lengthTarget = document.querySelector(".result1");
+            lengthTarget.textContent = text.length;
+
+            var regex = /^[0-9]{4}$/;
+            var isValid = regex.test(text);
+
+            var regexTarget = document.querySelector(".result2");
+            if(isValid) {
+                regexTarget.textContent = "나이스!";
+            }
+            else {
+                regexTarget.textContent = "잘못된 연도 형식입니다";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>입력이벤벤</h1>
+        </div>
+
+        <div class="cell">
+            <input type="text" class="temp tool w-100" oninput="checkText();">  
+        </div>
+       
+        <div class="cell result1"></div>
+        <div class="cell result2"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+    </style>
+    <script type="text/javascript">
+        function mediumii(){
+            var target = document.querySelector(".sdsd");
+            target.style.height = "300px";
+            target.style.width = "300px";
+        }
+
+        function smallii(){
+            var target = document.querySelector(".sdsd");
+            target.style.height = "150px";
+            target.style.width = "150px";
+        }
+
+        function largeii(){
+            var target = document.querySelector(".sdsd");
+            target.style.height = "450px";
+            target.style.width = "450px";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container w-500">
+        <div>
+            <button class="btn" onclick="smallii()">작게</button>
+            <button class="btn" onclick="mediumii()">보통</button>
+            <button class="btn" onclick="largeii()">크게</button>
+        </div>
+
+        <hr>
+
+        <div>
+            <img src="" width="300px" height="300px" class="sdsd">
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

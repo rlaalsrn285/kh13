@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+    <style>
+        .editor{
+            min-height: 300px;
+        }
+
+        .count{
+            color:aqua;
+        }
+    </style>
+
+    <script>
+        function asd(){
+            var editor = document.querySelector(".editor");
+            var count = editor.value.length;
+
+            while(count > 100){ // (count)글자수가 100보다 크면
+                var content = editor.value;  //content는 editor의 밸류
+                editor.value = content.substring(0,content.length-1);
+                //editor의 값에 마지막한글자빼고 반환해라
+                count--;
+                //그리고 count 의값을 1을빼라
+            }
+
+            car count
+
+        }
+
+
+    </script>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div class="cell center"><h1>자소서서서</h1></div>
+
+        <div class="cell">
+            <h2>QQQ 본인예상20년뒤</h2>
+        </div>
+
+        <div class="cell">
+        <textarea class="tool w-100 editor" oninput="asd();"></textarea>
+        </div>
+
+        <div class="cell right">
+            <span class="count">0</span>  / 100
+        </div>
+    
+    </div>
+    
+</body>
+</html>

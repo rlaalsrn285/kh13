@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목을 설정하세요</title>
+    <link rel="stylesheet" type="text/css" href="commens.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <style>
+        
+
+    </style>
+    <script type="text/javascript">
+
+        function changeRed(){
+            var target = document.querySelector(".ttt");
+            target.style = "color:red";
+        }
+        function changeBlue(){
+            var target = document.querySelector(".ttt");
+            target.style.color = "blue";
+        }
+
+        function borderRed(){
+            var target = document.querySelector(".ttt")
+            target.style.border = "1px solid red"
+        }
+
+        function borderOrange(){
+            var target = document.querySelector(".ttt")
+            target.style.border = "1px solid orange"
+        }
+
+        function borderBlue(){
+            var target = document.querySelector(".ttt")
+            target.style.border = "1px solid blue"
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <div class="container w-500">
+        <div> <h1 class="ttt"> 자바스크립 style제어</h1></div>
+
+        <div class="cell">
+            <button class="btn" onclick="changeRed()">빨</button>
+            <button class="btn">주</button>
+            <button class="btn" onclick="changeBlue()">파</button>
+        </div>
+
+        <div class="cell">
+            <button class="btn" onclick="borderRed();">빨강테두</button>
+            <button class="btn" onclick="borderOrange();">주황테두</button>
+            <button class="btn" onclick="borderBlue();">파랑테두</button>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
