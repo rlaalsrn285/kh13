@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        
+    </style>
+
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+        /*
+            자바스크립트 내장객체
+            - window : 자바스크립트 최상위 내장객체이며 창과 관련된 작업 처리
+                - location : 주소, 이동과 관련된 작업을 처리
+                - history : 방문이력과 관련된 작업을 처리
+                - document : 화면에 표시되는 문서에 대한 작업을 처리
+            
+            (코드량 감소를 위해 window는 생략 가능하다)
+        */
+
+        function window01() {
+            console.log(window);
+            alert("알림창 테스트!");
+        }
+        function window02() {
+            var choice = window.confirm("정말로?");
+            console.log(choice);
+        }
+        function window03() {
+            window.open("https://www.naver.com");
+        }
+        function window04() {
+            //window.open(표시할주소, 창이름, 창속성)
+            window.open("https://google.com", "google", "width=500,height=500");
+        }
+
+        function location01() {
+            //console.log(window.location);
+            //console.log(location);
+
+            location.href = "https://www.google.com";
+        }
+        function location02() {
+            var choice = window.confirm("정말 이동할꺼에요?");
+            if(choice) {
+                location.href = "https://www.naver.com";
+            }
+        }
+
+        function history01() {
+            //console.log(window.history);
+            
+            //history.back();
+            history.go(-1);
+        }
+
+        //비교적 최신 선택 명령인 document.querySelector / All
+        //- CSS 선택자를 이용하여 대상을 조회할 수 있는 명령
+        //- 선택 대상의 개수에 따라 명령을 다르게 사용(한개 / 여러개)
+        //- IE 이슈가 있으나 현재 사용해도 문제가 없음
+        function document01() {
+            //console.log(window.document);
+
+            //최초 1개만 선택
+            //var target = document.querySelector("h3");
+            //target.style.color = "blue";
+
+            //전체 선택
+            var targetList = document.querySelectorAll("h3");
+            //console.log(targetList);
+
+            //targetList.style.color = "blue";//말도 안되는 코드
+            //targetList[0].style.color = "blue";//말 되는 코드
+
+            for(var i=0; i < targetList.length; i++) {
+                targetList[i].style.color = "blue";
+            }
+        }
+
+        //구버전 자바스크립트에서 태그를 선택하는 명령은 매우 다양했다
+        //- 아이디로 선택하는 명령 - getElementById()
+        //- 태그명으로 선택하는 명령 - getElementsByTagName()
+        //- 클래스명으로 선택하는 명령 - getElementsByClassName()
+        function document02() {
+            //var target = document.getElementById("header");
+            //target.style.backgroundColor = "yellow";
+
+            //var targetList = document.getElementsByClassName("title");
+            //for(var i=0; i < targetList.length; i++) {
+            //    targetList[i].style.backgroundColor = "yellow";
+            //}
+
+            var targetList = document.getElementsByTagName("h3");
+            for(var i=0; i < targetList.length; i++) {
+               targetList[i].style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>자바스크립트 내장객체</h1>
+        </div>
+        <div class="cell">
+            <h2>창(window)</h2>
+        </div>
+        <div class="cell">
+            <button class="btn positive" onclick="window01();">알림창</button>
+            <button class="btn positive" onclick="window02();">확인창</button>
+            <button class="btn positive" onclick="window03();">새탭</button>
+            <button class="btn positive" onclick="window04();">새창(팝업)</button>
+        </div>
+
+        <div class="cell">
+            <h2>주소(location)</h2>
+        </div>
+        <div class="cell">
+            <button class="btn positive" onclick="location01();">구글로 이동</button>
+            <button class="btn positive" onclick="location02();">네이버로 이동(+팝업)</button>
+        </div>
+
+        <div class="cell">
+            <h2>이력(history)</h2>
+        </div>
+        <div class="cell">
+            <button class="btn positive" onclick="history01();">뒤로가기</button>
+        </div>
+
+        <div class="cell">
+            <h2>문서(document)</h2>
+        </div>
+        <div class="cell">
+            <button class="btn positive" onclick="document01();">태그 선택(신)</button>
+            <button class="btn positive" onclick="document02();">태그 선택(구)</button>
+        </div>
+        <div class="cell">
+            <h3 id="header" class="title">Hello Javascript!</h3>
+            <h3 class="title">Hello Javascript!</h3>
+            <h3>Hello Javascript!</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

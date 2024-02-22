@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        
+    </style>
+
+
+    <script type="text/javascript">
+       function checkPoNo(){
+        var inputTarget = document.querySelector("input[name=pocketmonNo]");
+        var PoNo = inputTarget.value;
+
+        var regex = /^[1-9][0-9]*$/;
+        var isValid = regex.test(PoNo);
+
+        inputTarget.classList.remove("success", "fail");
+
+        if(isValid) {
+                inputTarget.classList.add("success");
+                return true;//성공했음을 알린다
+            }
+            else {
+                inputTarget.classList.add("fail");
+                return false;//실패했음을 알린다
+            }
+       }
+
+       function checkPoName(){
+        var inputTarget = document.querySelector("input[name=pocketmonName]")
+        var PoName = inputTarget.value;
+
+        var regex = /^[가-힣]{1,12}$/
+        var isValid = regex.test(PoName);
+
+        inputTarget.classList.remove("success", "fail");
+
+        if(isValid) {
+                inputTarget.classList.add("success");
+                return true;//성공했음을 알린다
+            }
+            else {
+                inputTarget.classList.add("fail");
+                return false;//실패했음을 알린다
+            }
+       }
+
+       function checkPoType(){
+        var inputTarget = document.querySelector("[name=pocketmonType]")
+        var PoType = inputTarget.value;
+
+        var regex = /^[가-힣]{1,6}$/
+        var isValid = regex.test(PoType);
+
+        inputTarget.classList.remove("success", "fail");   
+        inputTarget.classList.add(isValid ? "success" : "fail");
+    
+        return isValid;
+       }
+
+       function checkForm() {
+            var isValid1 = checkPoNo();
+            var isValid2 = checkPoName();
+            var isValid3 = checkPoType();
+            return isValid1 && isValid2 && isValid3;
+        }
+    </script>
+</head>
+<body>
+
+    <form action="https://google.com" autocomplete="off" method="get"
+     onsubmit="return checkForm();">
+        <div class="container w-400">
+            <div class="cell center">
+                <h1>포켓몬스터 등록</h1>
+            </div>
+            
+            <div class="cell">
+                <label>번호</label>
+                <input name="pocketmonNo" class="tool w-100" onblur="checkPoNo();">
+                <div class="success-feedback">올바른입력형식임</div>
+                <div class="fail-feedback">숫자만 입력해라0은안된다</div>
+
+            </div>
+            
+            <div class="cell">
+                <label>이름</label>
+                <input name="pocketmonName" class="tool w-100" onblur="checkPoName();">
+                <div class="success-feedback">이름맞음</div>
+                <div class="fail-feedback">한글1~12글자 써라</div>
+            </div>
+            
+            <div class="cell">
+                <label>속성</label>
+                <input name="pocketmonType" class="tool w-100" onblur="checkPoType();">
+                <div class="success-feedback">속성맞음</div>
+                <div class="fail-feedback">한글1~6글자 써라</div>
+            </div>
+            
+            <div class="cell">
+                <button class="btn positive w-100">등록</button>
+            </div>
+        </div>
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        
+    </style>
+
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+       function overallAgree(){
+        var targetBox = document.getElementById("overall");
+
+        var tltl = document.querySelectorAll(".checkcheck");
+        if(targetBox.checked){
+            for(var i=0; i<tltl.length; i++){
+            tltl[i].checked = true;
+        }
+        }else{
+            for(var i=0; i<tltl.length; i++){
+            tltl[i].checked = false;
+        }
+
+        }        
+}
+function optionalAgree(){
+        var targetBox = document.getElementById("optional");
+
+        var tltl = document.querySelectorAll(".requiredItem");
+        if(targetBox.checked){
+            for(var i=0; i<tltl.length; i++){
+            tltl[i].checked = true;
+        }
+        }else{
+            for(var i=0; i<tltl.length; i++){
+            tltl[i].checked = false;
+        }
+
+        }
+
+    }
+        
+       
+    </script>
+</head>
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>제목</h1>
+        </div>
+        <div class="cell">
+            <div><input type="checkbox" class="requiredItem checkcheck">(필수)개인정보~</div>
+            <div><input type="checkbox" class="requiredItem checkcheck">(필수)홈페이지~</div>
+            <div><input type="checkbox" class="optionalItem checkcheck">(선택)이벤트성~</div>
+            <div><input type="checkbox" class="optionalItem checkcheck">(선택)개인정보~</div>
+            <hr>
+            <div><input type="checkbox" onclick="optionalAgree()" id="optional">필수동의</div>
+            <div><input type="checkbox" onclick="overallAgree()" id="overall">전체동의</div>
+        </div>  
+    </div>
+
+</body>
+</html>

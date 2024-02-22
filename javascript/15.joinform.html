@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* 
+            입력창 피드백 디자인 
+            - 입력창 뒤에 피드백 영역이 있다면 판정 결과에 따라 표시되도록 구현
+        */
+        .tool.success {
+            border-color: #00b894 !important;
+        }
+        .tool.fail {
+            border-color: #d63031 !important;
+        }
+        .success-feedback {
+            color: #00b894;
+            display: none;
+        }
+        .fail-feedback, 
+        .fail2-feedback,
+        .fail3-feedback
+        {
+            color: #d63031;
+            display: none;
+        }
+
+        .tool.success ~ .success-feedback,
+        .tool.fail ~ .fail-feedback,
+        .tool.fail2 ~ .fail2-feedback,
+        .tool.fail3 ~ .fail3-feedback 
+        { 
+            display: block; 
+        }
+    </style>
+
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+        function checkMemberId() {
+            //입력값 불러와서 검사한 뒤 출력
+
+            //입력
+            var inputTarget = document.querySelector("input[name=memberId]");
+            var memberId = inputTarget.value;
+
+            //검사
+            var regex = /^[a-z][a-z0-9]{7,19}$/;
+            var isValid = regex.test(memberId);
+
+            //출력 - 입력창에 검사 결과를 표시하고 나머지 처리는 연결되도록 구현
+            inputTarget.classList.remove("success", "fail");
+            if(isValid) {
+                inputTarget.classList.add("success");
+                return true;
+            }
+            else {
+                inputTarget.classList.add("fail");
+                return false;
+            }
+        }
+
+        function checkMemberPw() {
+            var inputTarget = document.querySelector("input[name=memberPw]");
+            var memberPw = inputTarget.value;
+
+            var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$])[A-Za-z0-9!@#$]{6,15}$/;
+            var isValid = regex.test(memberPw);
+
+            inputTarget.classList.remove("success", "fail");
+            inputTarget.classList.add(isValid ? "success" : "fail");
+            return isValid;
+        }
+
+        function checkMemberPwRe() {
+            //입력 - 비밀번호, 비밀번호 확인창 입력값
+            var target1 = document.querySelector("input[name=memberPw]");
+            var target2 = document.querySelector("#pw-reinput");
+            //var target2 = document.getElementById("pw-reinput");
+
+            var memberPw = target1.value;//비밀번호
+            var memberPw2 = target2.value;//비밀번호 확인
+
+            target2.classList.remove("success", "fail", "fail2");
+
+            if(memberPw.length == 0) {//글자수 0이면
+                target2.classList.add("fail2");
+            }
+            else if(memberPw == memberPw2) {//비밀번호와 확인이 일치하면
+                target2.classList.add("success");
+                return true;
+            }
+            else {//일치하지 않는다면
+                target2.classList.add("fail");
+                return false;
+            }
+        }
+
+        function checkForm(){
+            var aaa = checkMemberId();
+            var bbb = checkMemberPw();
+            var ccc = checkMemberPwRe();
+            
+            return aaa && bbb && ccc;
+
+        }
+    </script>
+</head>
+<body>
+
+    <form autocomplete="off" action="https://www.naver.com" method="get"
+     onsubmit="return checkForm();">
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>회원가입</h1>
+        </div>
+
+        <div class="cell">
+            <label>
+                아이디
+                <i class="fa-solid fa-asterisk red"></i>
+            </label>
+            <input type="text" name="memberId" 
+                            placeholder="영문 소문자시작, 숫자 포함 8~20자" 
+                            class="tool w-100" onblur="checkMemberId();">
+            <div class="success-feedback">멋진 아이디네요!</div>
+            <div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 작성하세요</div>
+        </div>  
+
+        <div class="cell">
+            <label>
+                비밀번호
+                <i class="fa-solid fa-asterisk red"></i>
+            </label>
+            <input type="password" name="memberPw"
+                            placeholder="영문 대소문자, 숫자, 특수문자 1개 이상 포함 6~15자"
+                            class="tool w-100" onblur="checkMemberPw();">
+            <div class="success-feedback">비밀번호가 올바른 형식입니다</div>
+            <div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가 포함되어야 합니다</div>
+        </div>
+
+        <div class="cell">
+            <label>
+                비밀번호 확인
+                <i class="fa-solid fa-asterisk red"></i>
+            </label>
+            <!-- 비밀번호 확인은 백엔드로 전송되지 않도록 이름을 부여하지 않는다 -->
+            <input type="password" placeholder=""
+                            id="pw-reinput" class="tool w-100"
+                            onblur="checkMemberPwRe();">
+            <div class="success-feedback">비밀번호가 일치합니다</div>
+            <div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
+            <div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
+        </div>
+
+        <div class="cell">
+            <button class="btn positive w-100">
+                <i class="fa-solid fa-user"></i>
+                회원가입
+            </button>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>
