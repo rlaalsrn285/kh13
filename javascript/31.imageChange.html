@@ -18,12 +18,22 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        
+        .rrr{
+            transition-property: width,height;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
     <script type="text/javascript">
-        console.log("Hello Javascript!");
+     $(function(){
+        $(".bb").click(function(){
+            var size = $(this).data("ssize");
+            $(".rrr").css("width",size)
+                        .css("height",size);
+        });
+     });
     </script>
 </head>
 <body>
@@ -32,9 +42,16 @@
         <div class="cell center">
             <h1>제목</h1>
         </div>
-        <div class="cell">
-
+        <div class="cell center">
+            <button class="btn positive bb" data-ssize="150px">작게</button>
+            <button class="btn positive bb" data-ssize="300px">보통</button>
+            <button class="btn positive bb" data-ssize="450px">크게</button>
         </div>  
+
+        <div class="cell center">
+            <img class="rrr" src="../css/iimmgg/qqqq.png" width="300px" height="300px">
+        </div>
+
     </div>
 
 </body>

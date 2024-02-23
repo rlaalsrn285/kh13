@@ -18,12 +18,21 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        
+        .editor{
+            transition-property: font-size;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
     <script type="text/javascript">
-        console.log("Hello Javascript!");
+     $(function(){
+        $(".bb").click(function(){
+            var sss = $(this).data("ssize");
+            $(".editor").css("fontSize",sss);
+        });
+     });
     </script>
 </head>
 <body>
@@ -32,9 +41,22 @@
         <div class="cell center">
             <h1>제목</h1>
         </div>
-        <div class="cell">
-
+        <div class="cell center">
+            <button class="btn positive bb" data-ssize="16px">작게</button>
+            <button class="btn positive bb" data-ssize="24px">보통</button>
+            <button class="btn positive bb" data-ssize="32px">크게</button>
         </div>  
+
+        <div class="cell center">
+           <textarea class="editor tool w-100" style="min-height: 300px; font-size: 16px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam fringilla felis vel justo molestie, sit amet malesuada nunc tincidunt.
+                Duis ullamcorper felis a malesuada malesuada.
+                Sed auctor arcu vitae libero lacinia, sed tincidunt mauris bibendum.
+                Vestibulum auctor nunc a dui consectetur, in malesuada elit tincidunt.
+           </textarea>
+        </div>
+
     </div>
 
 </body>

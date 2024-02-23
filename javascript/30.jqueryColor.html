@@ -23,17 +23,26 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
     <script type="text/javascript">
-        console.log("Hello Javascript!");
+        $(function(){
+            $(".bb-red").on("click",function(){
+                $(".titlee").css("color","red");
+            });
+
+            $(".bb-blue").click(function(){
+                $(".titlee").css("color","orange");
+            });
+        });
     </script>
 </head>
 <body>
 
     <div class="container w-500">
         <div class="cell center">
-            <h1>제목</h1>
+            <h1 class="titlee">제목</h1>
         </div>
         <div class="cell">
-
+            <button class="btn positive bb-red">빨강</button>
+            <button class="btn positive bb-blue">파랑</button>
         </div>  
     </div>
 
