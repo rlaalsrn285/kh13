@@ -58,6 +58,9 @@
 <table border="1">
 	<thead>
 		<tr>
+		<th>
+						<input type="checkbox" class="check-all">
+					</th>
 			<th>사원번호</th>
 			<th>사원명</th>
 			<th>부서명</th>
@@ -68,6 +71,10 @@
 	<tbody align="center">
 		<c:forEach var="dto" items="${list}">
 		<tr>
+		<td>
+						<input type="checkbox" class="check-item"
+									name="empNo" value="${dto.empNo}">
+					</td>
 			<td>${dto.empNo}</td>
 			<td>
 				<a href="detail?empNo=${dto.empNo}">${dto.empName}</a>
@@ -79,7 +86,9 @@
 		</c:forEach>
 	</tbody>
 </table>
-
+<div class="cell right">
+		<button class="btn negative">전체삭제</button>
+	</div>
 
 <%-- 템플릿 페이지를 불러오는 코드 --%>
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

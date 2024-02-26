@@ -33,6 +33,12 @@
 	
 	    <!-- font awesome 아이콘 CDN -->
 	    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	    
+	    <!--  jQuery CDN -->
+    	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    
+    	<!-- 내가 만든 JS -->
+    	<script src="/js/commons.js"></script>
 	</head>
 	<body>
 		<%-- 
