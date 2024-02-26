@@ -180,104 +180,104 @@ textarea.tool.tool-fixed {
         - `ms-20`라고 작성할 경우 `margin-left:20px`로 처리
 */
 
-.m-0 { margin: 0px; }
-.m-10 { margin: 10px; }
-.m-20 { margin: 20px; }
-.m-30 { margin: 30px; }
-.m-40 { margin: 40px; }
-.m-50 { margin: 50px; }
+.m-0 { margin: 0px !important; }
+.m-10 { margin: 10px !important; }
+.m-20 { margin: 20px !important; }
+.m-30 { margin: 30px !important; }
+.m-40 { margin: 40px !important; }
+.m-50 { margin: 50px !important; }
 
-.mt-0 { margin-top: 0px; }
-.mt-10 { margin-top: 10px; }
-.mt-20 { margin-top: 20px; }
-.mt-30 { margin-top: 30px; }
-.mt-40 { margin-top: 40px; }
-.mt-50 { margin-top: 50px; }
+.mt-0 { margin-top: 0px !important; }
+.mt-10 { margin-top: 10px !important; }
+.mt-20 { margin-top: 20px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mt-40 { margin-top: 40px !important; }
+.mt-50 { margin-top: 50px !important; }
 
-.mb-0 { margin-bottom: 0px; }
-.mb-10 { margin-bottom: 10px; }
-.mb-20 { margin-bottom: 20px; }
-.mb-30 { margin-bottom: 30px; }
-.mb-40 { margin-bottom: 40px; }
-.mb-50 { margin-bottom: 50px; }
+.mb-0 { margin-bottom: 0px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+.mb-40 { margin-bottom: 40px !important; }
+.mb-50 { margin-bottom: 50px !important; }
 
-.ms-0 { margin-left: 0px; }
-.ms-10 { margin-left: 10px; }
-.ms-20 { margin-left: 20px; }
-.ms-30 { margin-left: 30px; }
-.ms-40 { margin-left: 40px; }
-.ms-50 { margin-left: 50px; }
+.ms-0 { margin-left: 0px !important; }
+.ms-10 { margin-left: 10px !important; }
+.ms-20 { margin-left: 20px !important; }
+.ms-30 { margin-left: 30px !important; }
+.ms-40 { margin-left: 40px !important; }
+.ms-50 { margin-left: 50px !important; }
 
-.me-0 { margin-right: 0px; }
-.me-10 { margin-right: 10px; }
-.me-20 { margin-right: 20px; }
-.me-30 { margin-right: 30px; }
-.me-40 { margin-right: 40px; }
-.me-50 { margin-right: 50px; }
+.me-0 { margin-right: 0px !important; }
+.me-10 { margin-right: 10px !important; }
+.me-20 { margin-right: 20px !important; }
+.me-30 { margin-right: 30px !important; }
+.me-40 { margin-right: 40px !important; }
+.me-50 { margin-right: 50px !important; }
 
-.mx-0 { margin-left:0px; margin-right: 0px; }
-.mx-10 { margin-left:10px; margin-right: 10px; }
-.mx-20 { margin-left:20px; margin-right: 20px; }
-.mx-30 { margin-left:30px; margin-right: 30px; }
-.mx-40 { margin-left:40px; margin-right: 40px; }
-.mx-50 { margin-left:50px; margin-right: 50px; }
+.mx-0 { margin-left:0px !important; margin-right: 0px !important; }
+.mx-10 { margin-left:10px !important; margin-right: 10px !important; }
+.mx-20 { margin-left:20px !important; margin-right: 20px !important; }
+.mx-30 { margin-left:30px !important; margin-right: 30px !important; }
+.mx-40 { margin-left:40px !important; margin-right: 40px !important; }
+.mx-50 { margin-left:50px !important; margin-right: 50px !important; }
 
-.my-0 { margin-top:0px; margin-bottom: 0px; }
-.my-10 { margin-top:10px; margin-bottom: 10px; }
-.my-20 { margin-top:20px; margin-bottom: 20px; }
-.my-30 { margin-top:30px; margin-bottom: 30px; }
-.my-40 { margin-top:40px; margin-bottom: 40px; }
-.my-50 { margin-top:50px; margin-bottom: 50px; }
+.my-0 { margin-top:0px !important; margin-bottom: 0px !important; }
+.my-10 { margin-top:10px !important; margin-bottom: 10px !important; }
+.my-20 { margin-top:20px !important; margin-bottom: 20px !important; }
+.my-30 { margin-top:30px !important; margin-bottom: 30px !important; }
+.my-40 { margin-top:40px !important; margin-bottom: 40px !important; }
+.my-50 { margin-top:50px !important; margin-bottom: 50px !important; }
 
 
-.p-0 { padding: 0px; }
-.p-10 { padding: 10px; }
-.p-20 { padding: 20px; }
-.p-30 { padding: 30px; }
-.p-40 { padding: 40px; }
-.p-50 { padding: 50px; }
+.p-0 { padding: 0px !important; }
+.p-10 { padding: 10px !important; }
+.p-20 { padding: 20px !important; }
+.p-30 { padding: 30px !important; }
+.p-40 { padding: 40px !important; }
+.p-50 { padding: 50px !important; }
 
-.pt-0 { padding-top: 0px; }
-.pt-10 { padding-top: 10px; }
-.pt-20 { padding-top: 20px; }
-.pt-30 { padding-top: 30px; }
-.pt-40 { padding-top: 40px; }
-.pt-50 { padding-top: 50px; }
+.pt-0 { padding-top: 0px !important; }
+.pt-10 { padding-top: 10px !important; }
+.pt-20 { padding-top: 20px !important; }
+.pt-30 { padding-top: 30px !important; }
+.pt-40 { padding-top: 40px !important; }
+.pt-50 { padding-top: 50px !important; }
 
-.pb-0 { padding-bottom: 0px; }
-.pb-10 { padding-bottom: 10px; }
-.pb-20 { padding-bottom: 20px; }
-.pb-30 { padding-bottom: 30px; }
-.pb-40 { padding-bottom: 40px; }
-.pb-50 { padding-bottom: 50px; }
+.pb-0 { padding-bottom: 0px !important; }
+.pb-10 { padding-bottom: 10px !important; }
+.pb-20 { padding-bottom: 20px !important; }
+.pb-30 { padding-bottom: 30px !important; }
+.pb-40 { padding-bottom: 40px !important; }
+.pb-50 { padding-bottom: 50px !important; }
 
-.ps-0 { padding-left: 0px; }
-.ps-10 { padding-left: 10px; }
-.ps-20 { padding-left: 20px; }
-.ps-30 { padding-left: 30px; }
-.ps-40 { padding-left: 40px; }
-.ps-50 { padding-left: 50px; }
+.ps-0 { padding-left: 0px !important; }
+.ps-10 { padding-left: 10px !important; }
+.ps-20 { padding-left: 20px !important; }
+.ps-30 { padding-left: 30px !important; }
+.ps-40 { padding-left: 40px !important; }
+.ps-50 { padding-left: 50px !important; }
 
-.pe-0 { padding-right: 0px; }
-.pe-10 { padding-right: 10px; }
-.pe-20 { padding-right: 20px; }
-.pe-30 { padding-right: 30px; }
-.pe-40 { padding-right: 40px; }
-.pe-50 { padding-right: 50px; }
+.pe-0 { padding-right: 0px !important; }
+.pe-10 { padding-right: 10px !important; }
+.pe-20 { padding-right: 20px !important; }
+.pe-30 { padding-right: 30px !important; }
+.pe-40 { padding-right: 40px !important; }
+.pe-50 { padding-right: 50px !important; }
 
-.px-0 { padding-left:0px; padding-right: 0px; }
-.px-10 { padding-left:10px; padding-right: 10px; }
-.px-20 { padding-left:20px; padding-right: 20px; }
-.px-30 { padding-left:30px; padding-right: 30px; }
-.px-40 { padding-left:40px; padding-right: 40px; }
-.px-50 { padding-left:50px; padding-right: 50px; }
+.px-0 { padding-left:0px !important; padding-right: 0px !important; }
+.px-10 { padding-left:10px !important; padding-right: 10px !important; }
+.px-20 { padding-left:20px !important; padding-right: 20px !important; }
+.px-30 { padding-left:30px !important; padding-right: 30px !important; }
+.px-40 { padding-left:40px !important; padding-right: 40px !important; }
+.px-50 { padding-left:50px !important; padding-right: 50px !important; }
 
-.py-0 { padding-top:0px; padding-bottom: 0px; }
-.py-10 { padding-top:10px; padding-bottom: 10px; }
-.py-20 { padding-top:20px; padding-bottom: 20px; }
-.py-30 { padding-top:30px; padding-bottom: 30px; }
-.py-40 { padding-top:40px; padding-bottom: 40px; }
-.py-50 { padding-top:50px; padding-bottom: 50px; }
+.py-0 { padding-top:0px !important; padding-bottom: 0px !important; }
+.py-10 { padding-top:10px !important; padding-bottom: 10px !important; }
+.py-20 { padding-top:20px !important; padding-bottom: 20px !important; }
+.py-30 { padding-top:30px !important; padding-bottom: 30px !important; }
+.py-40 { padding-top:40px !important; padding-bottom: 40px !important; }
+.py-50 { padding-top:50px !important; padding-bottom: 50px !important; }
 
 
 /*
@@ -556,16 +556,16 @@ textarea.tool.tool-fixed {
 /*  
     글자 색상 디자인
 */
-.red { color: #d63031; }
-.orange { color: #fdcb6e;}
-.yellow { color: #ffeaa7;}
-.green { color: #00b894;}
-.skyblue { color: #74b9ff;}
-.blue {color: #0984e3;}
-.purple {color: #6c5ce7;}
-.black {color: #2d3436;}
-.gray {color: #636e72;}
-.white {color: white;}
+.red { color: #d63031 !important; }
+.orange { color: #fdcb6e !important;}
+.yellow { color: #ffeaa7 !important;}
+.green { color: #00b894 !important;}
+.skyblue { color: #74b9ff !important;}
+.blue {color: #0984e3 !important;}
+.purple {color: #6c5ce7 !important;}
+.black {color: #2d3436 !important;}
+.gray {color: #636e72 !important;}
+.white {color: white !important;}
 
 /* 
     텍스트 한줄 + 말줄임표 스타일
@@ -691,4 +691,76 @@ textarea.tool.tool-fixed {
     top: 0;
     left: auto;
     right: 100%;
+}
+
+/* 
+    float 모듈 디자인
+    - float를 사용하고 싶다면 div에 floating-cell이라는 클래스를 부여
+    - 영역이 끝나는 시점에 자동으로 clear를 수행하도록 디자인
+    - 가상 선택자인 ::after를 사용하여 강제 영역 생성 후 clear 수행
+*/
+.floating-cell::after {
+    content: ""; /* 태그 종료 시점의 가상영역을 생성하고 */
+    display: block; /* div처럼 block 상태로 만들고 */
+    clear: both; /* 사용한 float 속성을 모두 제거 */
+}
+/* floating-cell 내부의 항목들은 모두 float:left 처리 */
+.floating-cell > * {
+    float: left;
+}
+.floating-cell.reverse > * {
+    float: right;
+}
+
+
+/* flex layout 디자인 */        
+.flex-cell {
+    display: flex;
+}
+.flex-cell > .width-fill {
+    flex-grow: 1;
+}
+.flex-cell.auto-width > * {
+    flex-grow: 1;
+}
+.flex-cell.vertical {
+    flex-direction: column;
+}
+
+.flex-cell.middle {
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    입력창 피드백 디자인 
+    - 입력창 뒤에 피드백 영역이 있다면 판정 결과에 따라 표시되도록 구현
+*/
+.tool.success {
+    border-color: #00b894 !important;
+}
+.tool.fail,
+.tool.fail2,
+.tool.fail3 
+{
+    border-color: #d63031 !important;
+}
+.success-feedback {
+    color: #00b894;
+    display: none;
+}
+.fail-feedback, 
+.fail2-feedback,
+.fail3-feedback
+{
+    color: #d63031;
+    display: none;
+}
+
+.tool.success ~ .success-feedback,
+.tool.fail ~ .fail-feedback,
+.tool.fail2 ~ .fail2-feedback,
+.tool.fail3 ~ .fail3-feedback 
+{ 
+    display: block; 
 }
