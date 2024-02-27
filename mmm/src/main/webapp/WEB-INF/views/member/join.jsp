@@ -3,10 +3,19 @@
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
+
 <form action="join" method="post" enctype="multipart/form-data" autocomplete="off">
 
 <div class="container w-500">
 	<div class="cell center"><h1>회원 정보 입력</h1></div>
+	
+	<div class="cell">
+		<div class="progressbar">
+		<div class="guage">
+		
+		</div>
+		</div>
+	</div>
 	
 	<!-- 1페이지 - 아이디/비밀번호 -->
 	<div class="cell page">
