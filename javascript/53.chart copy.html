@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+        console.log("Hello Javascript!");
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $.ajax({
+                url:"http://localhost:8080/rest/stat/emp",
+                method:"get",
+                success:function(response){
+                    console.log(response);
+
+                    var labelList = [];
+                    var dataList = [];
+
+                    for(var i=0; i<response.length; i++){
+                        labelList.push(response[i].title);
+                        dataList.push(response[i].count);
+                    }
+                    var ctx = document.querySelector('.aaa');
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labelList,
+                    datasets: [{
+                        label: '사원 통계',
+                        data: dataList,
+                        borderWidth: 5,
+                        backgroundColor:["red","blue"],
+                        borderColor:["black"]
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+                }
+            });
+
+            $.ajax({
+                url:"http://localhost:8080/rest/stat/pocketmon",
+                method:"get",
+                success:function(response){
+                    console.log(response);
+
+                    var labelList = [];
+                    var dataList = [];
+
+                    for(var i=0; i<response.length; i++){
+                        labelList.push(response[i].title);
+                        dataList.push(response[i].count);
+                    }
+                    var ctx = document.querySelector('.bbb');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labelList,
+                    datasets: [{
+                        label: '포켓몬 통계',
+                        data: dataList,
+                        borderWidth: 5,
+                        backgroundColor:["red","blue"],
+                        borderColor:["black"]
+                    }]
+                },
+                options: {
+                    plugins:{
+                        legend:{
+                            display:false
+                        }
+                    }
+                }
+            });
+                }
+            });
+            
+        });
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>차트 js 라이브러리연습</h1>
+        </div>
+        <div>
+            <canvas class="aaa"></canvas>
+        </div>
+
+        <div>
+            <canvas class="bbb"></canvas>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

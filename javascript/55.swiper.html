@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>Document</title>
+
+</head>
+<script type="text/javascript">
+
+    window.onload = function () {
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    };
+
+</script>
+
+<body>
+
+    <!-- Slider main container -->
+    <div class="swiper container w-700">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper cell center">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="../css/iimmgg/nnn.png" alt="바보멍청">
+            </div>
+            <div class="swiper-slide">
+                <img src="../css/iimmgg/qqqq.png" alt="똥구리">
+            </div>
+            <div class="swiper-slide">
+                <img src="../css/iimmgg/umum.jpg" alt="멍텅구리">
+            </div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+</body>
+
+</html>

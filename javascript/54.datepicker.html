@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- 라이트픽-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.6.2/css/lightpick.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightpick@1.6.2/lightpick.min.js"></script>
+
+    <style>
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+
+        $(function(){
+
+            var ppp1 = new Lightpick({
+                field: document.querySelector("[name=ttt1]")
+            });
+
+            var ppp2 = new Lightpick({
+                field: $("[name=test4]")[0], //첫 번째 필드
+                secondField: $("[name=test5]")[0], //두 번째 필드
+                singleDate:false,//단일 날짜 선택 불가(범위 선택 가능)
+                format: "YYYY-MM-DD",
+                numberOfMonths: 2,
+                numberOfColumns: 2,
+            });
+            
+        });
+
+    </script>
+</head>
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>datepicker 실험</h1>
+        </div>
+        <div class="cell">
+            <input type="text" name="ttt1" class="tool w-100">
+        </div>  
+
+        <div class="cell flex-cell">
+            <input class="text" name="aa22" class="tool w-100">
+            <input class="text" name="aa33" class="tool w-100">
+        </div>
+    </div>
+
+</body>
+</html>
