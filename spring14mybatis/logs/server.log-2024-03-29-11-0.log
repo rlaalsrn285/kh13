@@ -1,0 +1,15 @@
+2024-03-29T11:00:20.374+09:00  INFO 19852 --- [main] c.k.s.Spring14mybatisApplicationTests    : Starting Spring14mybatisApplicationTests using Java 17.0.9 with PID 19852 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T11:00:20.377+09:00 DEBUG 19852 --- [main] c.k.s.Spring14mybatisApplicationTests    : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T11:00:20.378+09:00  INFO 19852 --- [main] c.k.s.Spring14mybatisApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T11:00:21.048+09:00  WARN 19852 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T11:00:22.368+09:00  INFO 19852 --- [main] c.k.s.Spring14mybatisApplicationTests    : Started Spring14mybatisApplicationTests in 2.368 seconds (process running for 3.287)
+2024-03-29T11:19:06.510+09:00  INFO 3864 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 3864 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T11:19:06.511+09:00 DEBUG 3864 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T11:19:06.511+09:00  INFO 3864 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T11:19:07.143+09:00  WARN 3864 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T11:19:08.503+09:00  INFO 3864 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.315 seconds (process running for 3.197)
+2024-03-29T11:21:53.610+09:00  INFO 20504 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 20504 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T11:21:53.611+09:00 DEBUG 20504 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T11:21:53.611+09:00  INFO 20504 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T11:21:54.241+09:00  WARN 20504 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T11:21:55.631+09:00  INFO 20504 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.33 seconds (process running for 3.202)

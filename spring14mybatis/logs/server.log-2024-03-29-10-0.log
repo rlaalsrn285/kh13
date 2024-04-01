@@ -1,0 +1,6 @@
+2024-03-29T10:33:33.551+09:00  INFO 12684 --- [main] com.kh.spring14.PST01                    : Starting PST01 using Java 17.0.9 with PID 12684 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T10:33:33.552+09:00 DEBUG 12684 --- [main] com.kh.spring14.PST01                    : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T10:33:33.552+09:00  INFO 12684 --- [main] com.kh.spring14.PST01                    : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T10:33:34.179+09:00  WARN 12684 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T10:33:35.586+09:00  INFO 12684 --- [main] com.kh.spring14.PST01                    : Started PST01 in 2.359 seconds (process running for 3.25)
+2024-03-29T10:33:36.654+09:00 DEBUG 12684 --- [main] com.kh.spring14.PST01                    : 결과 수 : 1

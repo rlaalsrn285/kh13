@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<select id="list" resultType="MemberDto">
+		select * from member
+	</select>
+
+	<select id="search" resultType="MemberDto">
+		select * from member where instr(${column}, #{keyword}) > 0
+		order by
+		${column} asc, member_id asc
+	</select>
+
+	<select id="listOrSearch" resultType="MemberDto">
+		select * from member
+		<if test="column != null and keyword != null">
+			select * from member where instr(${column}, #{keyword}) > 0
+			order by ${column} asc, member_id asc
+		</if>
+	</select>
+
+	<select id="complex" resultType="MemberDto">
+		select * from member
+		<where>
+			<if test="memberId != null">
+				and member_id like #{memberId} || '%'
+			</if>
+			<if test="memberNick != null">
+				and instr(member_nick, ${memberNick}) > 0
+			</if>
+		</where>
+	</select>
+
+</mapper>

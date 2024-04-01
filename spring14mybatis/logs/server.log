@@ -1,0 +1,32 @@
+2024-03-29T12:40:15.102+09:00  INFO 1228 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 1228 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:40:15.106+09:00 DEBUG 1228 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:40:15.107+09:00  INFO 1228 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:40:15.752+09:00  WARN 1228 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:40:17.126+09:00  INFO 1228 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.349 seconds (process running for 3.245)
+2024-03-29T12:41:53.313+09:00  INFO 17224 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 17224 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:41:53.314+09:00 DEBUG 17224 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:41:53.314+09:00  INFO 17224 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:41:53.933+09:00  WARN 17224 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:41:55.281+09:00  INFO 17224 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.292 seconds (process running for 3.198)
+2024-03-29T12:44:20.624+09:00  INFO 8752 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 8752 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:44:20.625+09:00 DEBUG 8752 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:44:20.625+09:00  INFO 8752 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:44:21.261+09:00  WARN 8752 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:44:22.665+09:00  INFO 8752 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.364 seconds (process running for 3.252)
+2024-03-29T12:44:23.629+09:00 DEBUG 8752 --- [main] com.kh.spring14.PIT                      : 등록성공
+2024-03-29T12:57:01.500+09:00  INFO 20432 --- [main] com.kh.spring14.PU                       : Starting PU using Java 17.0.9 with PID 20432 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:57:01.501+09:00 DEBUG 20432 --- [main] com.kh.spring14.PU                       : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:57:01.502+09:00  INFO 20432 --- [main] com.kh.spring14.PU                       : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:57:02.142+09:00  WARN 20432 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:57:03.529+09:00  INFO 20432 --- [main] com.kh.spring14.PU                       : Started PU in 2.345 seconds (process running for 3.251)
+2024-03-29T12:58:37.807+09:00  INFO 12532 --- [main] com.kh.spring14.PIT                      : Starting PIT using Java 17.0.9 with PID 12532 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:58:37.808+09:00 DEBUG 12532 --- [main] com.kh.spring14.PIT                      : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:58:37.809+09:00  INFO 12532 --- [main] com.kh.spring14.PIT                      : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:58:38.430+09:00  WARN 12532 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:58:39.811+09:00  INFO 12532 --- [main] com.kh.spring14.PIT                      : Started PIT in 2.326 seconds (process running for 3.231)
+2024-03-29T12:58:47.708+09:00  INFO 19228 --- [main] com.kh.spring14.PU                       : Starting PU using Java 17.0.9 with PID 19228 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring14mybatis)
+2024-03-29T12:58:47.709+09:00 DEBUG 19228 --- [main] com.kh.spring14.PU                       : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-29T12:58:47.709+09:00  INFO 19228 --- [main] com.kh.spring14.PU                       : No active profile set, falling back to 1 default profile: "default"
+2024-03-29T12:58:48.338+09:00  WARN 19228 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.kh.spring14]' package. Please check your configuration.
+2024-03-29T12:58:49.712+09:00  INFO 19228 --- [main] com.kh.spring14.PU                       : Started PU in 2.332 seconds (process running for 3.235)
+2024-03-29T12:58:50.680+09:00 DEBUG 19228 --- [main] com.kh.spring14.PU                       : 정보 변경성공임니다

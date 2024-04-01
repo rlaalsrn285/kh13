@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="emp">
+    
+    <insert id="adad">
+    insert into emp(emp_no, emp_name, emp_dept, emp_date, emp_sal)
+     values(#{empNo},#{empName},#{empDept},#{empDate},#{empSal})
+    </insert>
+    
+    <select id="listAll" resultType="EmpDto">
+    select * from emp
+    </select>
+    
+    <select id="findOne" resultType="EmpDto">
+    select * from emp where Emp_no = #{empNo}
+    </select>
+    
+    <select id="selectByColumnAndValue" resultType="EmpDto">
+    select * from emp where #{kkk} = #{vvv}
+    </select>
+    
+    
+    </mapper>

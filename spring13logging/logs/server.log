@@ -1,0 +1,8 @@
+2024-03-28T15:57:42.489+09:00  INFO 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : Starting LoggingTest01 using Java 17.0.9 with PID 20620 (started by user1 in C:\Users\user1\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\spring13logging)
+2024-03-28T15:57:42.490+09:00 DEBUG 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-28T15:57:42.491+09:00  INFO 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : No active profile set, falling back to 1 default profile: "default"
+2024-03-28T15:57:44.355+09:00  INFO 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : Started LoggingTest01 in 2.187 seconds (process running for 3.128)
+2024-03-28T15:57:45.280+09:00 DEBUG 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : 디버그 메세지
+2024-03-28T15:57:45.280+09:00  INFO 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : 인포메세
+2024-03-28T15:57:45.280+09:00  WARN 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : 경고메세
+2024-03-28T15:57:45.280+09:00 ERROR 20620 --- [spring13logging] [main] com.kh.spring13logging.LoggingTest01     : 오류메세
