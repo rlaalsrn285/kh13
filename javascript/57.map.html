@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c19d937a6ad5c91ef01718fba99de45b&libraries=services"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".map").each(function () {
+                //this == 지도영역
+
+                var container = this;
+                var options = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667),
+                    level: 3,
+                    draggable: false,
+                };
+
+                var map = new kakao.maps.Map(container, options);
+
+                //주소 및 인포 불러오기
+                var address = $(this).data("address");
+                var info = $(this).data("info");
+
+                //주소 검색
+                var geocoder = new kakao.maps.services.Geocoder();
+                //geocoder.addressSearch(주소, 함수);
+                geocoder.addressSearch(address, function (result, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        //마커
+                        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                        var marker = new kakao.maps.Marker({
+                            map: map,
+                            position: coords
+                        });
+
+                        //인포윈도우 - 없으면 주소로 설정
+                        if (info == undefined) {
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: '<div style="width:150px;text-align:center;padding:6px 0;">' + address + '</div>'
+                            });
+                            infowindow.open(map, marker);
+                        }
+                        else {
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: '<div style="width:150px;text-align:center;padding:6px 0;">' + info + '</div>'
+                            });
+                            infowindow.open(map, marker);
+                        }
+
+                        //지도이동
+                        map.setCenter(coords);
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>주소로 지도검색</h1>
+        </div>
+
+        <div class="cell my-30">
+            <div class="map" data-address="서울 송파구 올림픽로 424" data-info="올림픽공원"></div>
+        </div>
+
+        <div class="cell my-30">
+            <div class="map" data-address="세종로 1-91" data-info="경복궁"></div>
+        </div>
+
+        <div class="cell my-30">
+            <div class="map" data-address="삼평동 627"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

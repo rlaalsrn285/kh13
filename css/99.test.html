@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험용</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .container {
+            margin-top: 120px!important;
+            box-shadow: 3px 3px 3px 3px gray,
+                -3px -3px 3px 3px gray,
+                3px -3px 3px 3px gray,
+                -3px 3px 3px 3px gray;
+    }
+    .cell {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .celll {
+    display: flex;
+    justify-content: space-between;
+}
+
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="commons.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var state = {
+                memberIdValid : false,
+                memberPwValid : false,
+
+                ok : function(){
+                    return this.memberIdValid && this.memberPwValid && this.memberPwCheckValid;
+                },
+            };
+
+            $("[name=userId]").on("blur", function(){
+                state.memberIdValid = $(this).val().trim() !== '';
+                $(this).removeClass("success fail")
+                            .addClass(state.memberIdValid ? "success" : "fail");
+            });
+
+            $("[name=userPw]").on("blur", function(){                
+                state.memberPwValid = $(this).val().trim() !== '';
+                $(this).removeClass("success fail")
+                            .addClass(state.memberPwValid ? "success" : "fail");
+            });
+
+            $(".check-form").submit(function(){
+                $("[name=userId]").blur();
+                $("[name=userPw]").blur();
+
+                return state.ok();
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <form autocomplete="off" action="#" method="post" class="check-form">
+        <div class="container w-500 px-50 py-50">
+            <div class="cell center">
+                <h1>User Login</h1>
+            </div>
+    
+            <div class="cell">
+                <input type="text" name="userId" 
+                                placeholder="ID" 
+                                class="tool w-100">
+                <div class="success-feedback"></div>
+                <div class="fail-feedback">모든 항목을 입력해야 전송 가능</div>
+            </div>  
+    
+            <div class="cell">
+                <input type="password" name="userPw"
+                                placeholder="Password"
+                                class="tool w-100">
+                <div class="success-feedback"></div>
+                <div class="fail-feedback">모든 항목을 입력해야 전송 가능</div>
+            </div>
+
+            <div class="celll flex-cell" style="justify-content: space-between">
+                <div>
+                    <input id="radio1" class="toggle-radio" type="radio" name="toggle" checked> 일반회원
+                </div>
+                <div>
+                    <input id="radio2" class="toggle-radio" type="radio" name="toggle"> 관리자
+                </div>
+            </div>
+            
+            <div class="cell ">
+                <button type="submit" class="btn w-100"
+                 style="background-color: rgb(53, 152, 219); color: white;">                    
+                    로그인
+                </button>
+            </div>
+            
+            <hr>
+
+            <div class="cell ">
+                <a href="#" class="btn w-100"
+                 style="background-color: rgb(224, 224, 224);">                    
+                    회원가입
+                </a>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.toggle-radio').change(function() {
+            $('.toggle-radio').not(this).prop('checked', false);
+        });
+    });
+</script>
+</body>
+</html>

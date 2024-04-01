@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap design</title>
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/cyborg/bootstrap.min.css" integrity="sha512-M+Wrv9LTvQe81gFD2ZE3xxPTN5V2n1iLCXsldIxXvfs6tP+6VihBCwCMBkkjkQUZVmEHBsowb9Vqsq1et1teEg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/21cc7afbfc.js" crossorigin="anonymous"></script>
+
+    <style>
+
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        
+        <div class="row my-5">
+            <div class="offset-sm-3 col-sm-6">
+         
+                <div class="row">
+                    <div class="col">
+                        <div class="p-4 rounded bg-color">
+                            <h1 class="text-center">포켓몬 등록</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="??" method="post" autocomplete="off">
+                <div class="row my-2">
+                    <div class="col">
+                        <label>번호
+                            <i class="fa-solid fa-asterisk text-danger"></i>
+                        </label>
+                        <input type="text" name="pNo"
+                        placeholder="(ex) 1" class="form-control">
+                        <div class="invalid-feedback">번호입력를 입력해라</div>
+                    </div>
+                </div>
+
+                <div class="row my-2">
+                    <div class="col">
+                        <label>이름
+                            <i class="fa-solid fa-asterisk text-danger"></i>
+                        </label>
+                        <input type="text" name="pName"
+                        placeholder="(ex) 이상해씨" class="form-control">
+                        <div class="invalid-feedback">이름을 입력해라</div>
+                    </div>
+                </div>
+
+                <div class="row my-2">
+                    <div class="col">
+                        <labe>속성
+                            <i class="fa-solid fa-asterisk text-danger"></i>
+                            <select class="form-select">
+                                <option value="">선택하삼</option>
+                                <option value="풀타입">풀타입</option>
+                                <option value="격투타임">격투타입</option>
+
+                            </select>
+                        </labe>
+                    </div>
+
+                </div>
+
+                <div class="row my-2">
+                    <div class="col">
+                        <button type="submit" class="btn btn-success w-100 rounded">
+                            <i class="fa-solid fa-floppy-disk"></i>등록버튼
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript 예제</title>
+
+	<!-- 구글 폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+	<!-- 내가 구현한 스타일 -->
+	<link rel="stylesheet" type="text/css" href="../css/commens.css">
+	<link rel="stylesheet" type="text/css" href="../css/test.css">
+
+	<!-- font awesome 아이콘 CDN -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+	<style>
+
+	</style>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c19d937a6ad5c91ef01718fba99de45b&libraries=services"></script>
+	
+	<script type="text/javascript">
+		$(function () {
+
+			var mapContainer = document.querySelector('.map'), // 지도를 표시할 div 
+				mapOption = {
+					center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+					level: 3 // 지도의 확대 레벨
+				};
+
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption);
+
+			$(".bbss").click(function () {
+				var kkk = $(".address-input").val();
+
+				if (kkk.trim().length < 0) return;
+
+				// 주소-좌표 변환 객체를 생성합니다
+				var geocoder = new kakao.maps.services.Geocoder();
+
+				// 주소로 좌표를 검색합니다
+				geocoder.addressSearch(kkk, function (result, status) {
+
+					// 정상적으로 검색이 완료됐으면 
+					if (status === kakao.maps.services.Status.OK) {
+
+						var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+						// 결과값으로 받은 위치를 마커로 표시합니다
+						var marker = new kakao.maps.Marker({
+							map: map,
+							position: coords
+						});
+
+						// 인포윈도우로 장소에 대한 설명을 표시합니다
+						var infowindow = new kakao.maps.InfoWindow({
+							content: '<div style="width:150px;text-align:center;padding:6px 0;">바보멍</div>'
+						});
+						infowindow.open(map, marker);
+
+						// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+						map.setCenter(coords);
+					}
+				});
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="container w-500">
+		<div class="cell center">
+			<h1>주소로 지도검색</h1>
+		</div>
+
+		<div class="cell flex-cell">
+			<input type="text" class="address-input tool w-100" placeholder="주소넣어라 예:서울특별시 영등포구 의사당대로 1">
+			<button class="btn negative bbss">혀어어어어어업상</button>
+		</div>
+
+		<div class="cell my-30">
+			<div class="map" style="width:500px;height:400px;"></div>
+		</div>
+
+
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            $(window).on("beforeunload",function(){
+                return false;
+            });
+
+            $("form.freepp").submit(function(){
+                $(window).off("beforeunload");
+                return true;
+            });
+
+            $("a.freepp").click(function(){
+                $(window).off("beforeunload");
+                return true;
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>페이지이탈방지</h1>
+        </div>
+
+        <form class="freepp">
+        <div class="cell">
+            <textarea class="tool w-100" name="ddd"></textarea>
+        </div>
+        
+        <div class="cell">
+            <button type="submit" class="btn negative w-100">버어어어튼</button>
+        </div>
+
+    </form>
+
+    <div class="cell">
+        <h2><a href="https://www.naver.com" class="link freepp">그냥링링</a></h2>
+        <h2><a href="https://www.naver.com" class="link">안뜨는링링</a></h2>
+    </div>
+
+    </div>
+    
+</body>
+</html>

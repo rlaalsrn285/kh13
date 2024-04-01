@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+        $(function(){
+            $(".b-send-cert").click(function(){
+                var btn = this;
+                $(btn).text("보내는중이삼");
+
+                var email = $("[name=memberEmail]").val();
+                if(email.length == 0) return;
+
+                $.ajax({
+                    url:"http://localhost:8080/rest/member/sendCert",
+                    method:"post",
+                    data:{memberEmail : email},
+                    success: function(response){
+                        $(btn).text("보내는중이삼");
+                    },
+                    error:function(){
+                        alert("뭐가안되네기달")
+                    },
+                    complete(){
+                        $(btn).text("버어튼");
+                    },
+
+                });
+            });
+        });
+    </script>
+    <script type="text/cert-template" id="cert-template">
+        <div class="flex-cell">
+            <input type="text" class="tool w-100 cert-input"
+            placeholder="인증번호 써라">
+            <button class="btn w-20">확인이삼</button>
+            </div> 
+    </script>
+</head>
+<body>
+
+    <div class="container w-500">
+        <div class="cell center">
+            <h1>이메일인증테스트</h1>
+        </div>
+        <div class="cell flex-cell">
+            <input type="email" name="memberEmail" class="tool w-100"
+            placeholder="이메일 입력">
+            <button class="btn positive w-20 b-send-cert">
+                버어어튼</button>
+        </div>  
+
+        <div class="cell ">
+            
+        </div>
+
+    </div>
+
+</body>
+</html>

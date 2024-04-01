@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 예제</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 내가 구현한 스타일 -->
+    <link rel="stylesheet" type="text/css" href="../css/commens.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
+
+    <!-- font awesome 아이콘 CDN -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+
+    </style>
+
+    <!-- jquery cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- 내가 만든 스크립트 추가(jQuery를 사용했으니 jQuery CDN 아래 작성) -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src="commons.js"></script>
+    <!-- javascript를 의도적으로 head 자리에 배치해서 가장 먼저 실행되도록 구현-->
+    <script type="text/javascript">
+
+        $(function () {
+            $("[name=ttt1]").summernote({});
+            $("[name=ttt3]").summernote({
+                callbacks: {
+                    onImageUpload: function (files) {
+                        console.log("이미이미이미");
+                        console.log(files);
+                    }
+                }
+            });
+
+            $("[name=ttt2]").summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ],
+                height: 250,
+                minHeight: 300,
+                maxHeight: 400,
+                placeholder: "방가방가햄토",
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container w-800">
+        <div class="cell center">
+            <h1>섬섬섬노노트트</h1>
+        </div>
+
+        <div>
+            <h2>구리구리</h2>
+        </div>
+        <div class="cell">
+            <textarea name="ttt1"></textarea>
+        </div>
+
+        <div>
+            <h2>구리구리</h2>
+        </div>
+        <div class="cell">
+            <textarea name="ttt2"></textarea>
+        </div>
+
+        <div>
+            <h2>이미지업로드연습</h2>
+        </div>
+        <div class="cell">
+            <textarea name="ttt3"></textarea>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
