@@ -1,0 +1,780 @@
+/*
+    KH정보교육원 당산지원 C강의장 수업자료
+
+    만든이 - 피카츄
+    만든날짜 - 2024.02.07
+*/
+@charset "UTF-8";
+
+/* 전체 선택자 - 모든 태그에 설정(전체 규칙) */
+* {
+    box-sizing: border-box;
+    word-break: break-all;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 
+    컨테이너(.container)
+    - 가장 작은 화면의 단위
+    - 내부에는 반드시 한 줄에 하나씩 도구들이 배치된다
+    - 컨테이너는 가운데 배치되도록 구현
+*/
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+    셀(.cell)
+    - 컨테이너의 내부에 배치되는 한 줄
+    - 셀과 셀 사이에는 일정 크기의 여백이 필요
+*/
+.cell {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*
+    폭 스타일
+    - 컨테이너와 컴포넌트 등 다양한 상황에 쓸 수 있는 폭을 미리 정의
+    - 최저 200px부터 최고 1200px까지 50px단위로 제작
+    - 100 이하의 숫자는 %로 인식하도록 구현
+*/
+.w-200 { width: 200px; }
+.w-250 { width: 250px; }
+.w-300 { width: 300px; }
+.w-350 { width: 350px; }
+.w-400 { width: 400px; }
+.w-450 { width: 450px; }
+.w-500 { width: 500px; }
+.w-550 { width: 550px; }
+.w-600 { width: 600px; }
+.w-650 { width: 650px; }
+.w-700 { width: 700px; }
+.w-750 { width: 750px; }
+.w-800 { width: 800px; }
+.w-850 { width: 850px; }
+.w-900 { width: 900px; }
+.w-950 { width: 950px; }
+.w-1000 { width: 1000px; }
+.w-1050 { width: 1050px; }
+.w-1100 { width: 1100px; }
+.w-1150 { width: 1150px; }
+.w-1200 { width: 1200px; }
+
+.w-100 { width:100%; }
+.w-75 { width:75%; }
+.w-50 { width:50%; }
+.w-33 { width:33.3333%; }
+.w-25 { width:25%; }
+
+/*
+    입력창과 버튼 스타일
+    - 입력창 - .tool
+    - 버튼 - .btn
+*/
+.tool , .btn {
+    font-size: 20px;
+    padding: 0.5em 1em;
+    outline: none;/*선택시 자동강조효과 제거*/
+    border: 1px solid #636e72;
+    border-radius: 0.1em;
+}
+
+/* 입력창은 focus 효과가 발생할 때 테두리를 강조 */
+.tool:focus {
+    border-color: #2d3436;
+}
+
+/* 밑줄만 있는 입력창 구현 .tool.underline*/
+.tool.underline {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 이미지가 들어갈 수 있는 입력창 */
+.tool.tool-image {
+    padding-left: 2.25em;
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position-x: 0.625em;
+    /* background-position-y: 50%; */
+    background-position-y: center;
+}
+
+/*
+    textarea도 입력도구이므로 .tool을 사용한다
+    textarea의 최대 문제점은 가로로 크기조절이 가능한 것이므로 이를 제어
+    resize 속성으로 설정
+    - `resize : none` 으로 설정하면 크기 조절이 불가능
+    - `resize : vertical`로 설정하면 세로 크기 조절만 가능
+*/
+textarea.tool {
+    resize: vertical;
+    min-height: 5em; /* 필요 시 개조 */
+}
+textarea.tool.tool-fixed {
+    resize: none;
+}
+
+/*
+    버튼은 크게 세 가지 용도로 구분한다
+    1. 긍정버튼 - 누르면 긍정적인 작업이 발생하는 경우(순리대로 흘러가는 경우)
+    2. 부정버튼 - 누르면 작업이 중단되거나 위험한 일이 발생하는 경우
+    3. 중립버튼 - 긍정도 부정도 아닌 제 3의 작업이 발생하는 경우
+
+    그냥 .btn은 중립버튼으로 처리한다
+    긍정버튼은 .btn 뒤에 .positive 추가
+    부정버튼은 .btn 뒤에 .negative 추가
+
+    마우스가 버튼에 올라가면(hover) 강조 효과 부여
+*/
+
+.btn {/* a태그를 버튼으로 쓸 경우 */
+    color: #2d3436;
+    text-decoration: none; /* 밑줄 제거 */
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn.positive {
+    background-color: #00b894;
+    color: white;
+}
+.btn.negative {
+    background-color: #d63031;
+    color: white;
+}
+
+/* 버튼에 마우스가 올라가면 색상의 변화를 주겠다 */
+.btn:hover {
+    filter: brightness(0.9);
+}
+
+
+/*
+    정렬 스타일
+    - .left를 붙이면 왼쪽 정렬
+    - .center를 붙이면 가운데 정렬
+    - .right를 붙이면 오른쪽 정렬
+    - 우선순위에서 밀리지 않기 위해 !important 처리를 해야함
+*/
+.left { text-align: left !important; }
+.center { text-align: center !important; }
+.right { text-align: right !important; }
+
+/*
+    여백 스타일(spacing)
+    - class를 이용하여 margin과 padding을 부여할 수 있도록 구현
+    - 10px 단위로 설정할 수 있도록 구현
+    - 범위는 0~50까지
+    - 여백의 방향을 지정할 수 있도록 구현
+        - `mt-10`이라고 작성할 경우 `margin-top : 10px`로 처리
+        - `m-20`이라고 작성할 경우 `margin: 20px`로 처리
+        - `pb-20`이라고 작성할 경우 `padding-bottom: 20px`로 처리
+        - `ms-20`라고 작성할 경우 `margin-left:20px`로 처리
+*/
+
+.m-0 { margin: 0px !important; }
+.m-10 { margin: 10px !important; }
+.m-20 { margin: 20px !important; }
+.m-30 { margin: 30px !important; }
+.m-40 { margin: 40px !important; }
+.m-50 { margin: 50px !important; }
+
+.mt-0 { margin-top: 0px !important; }
+.mt-10 { margin-top: 10px !important; }
+.mt-20 { margin-top: 20px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mt-40 { margin-top: 40px !important; }
+.mt-50 { margin-top: 50px !important; }
+
+.mb-0 { margin-bottom: 0px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+.mb-40 { margin-bottom: 40px !important; }
+.mb-50 { margin-bottom: 50px !important; }
+
+.ms-0 { margin-left: 0px !important; }
+.ms-10 { margin-left: 10px !important; }
+.ms-20 { margin-left: 20px !important; }
+.ms-30 { margin-left: 30px !important; }
+.ms-40 { margin-left: 40px !important; }
+.ms-50 { margin-left: 50px !important; }
+
+.me-0 { margin-right: 0px !important; }
+.me-10 { margin-right: 10px !important; }
+.me-20 { margin-right: 20px !important; }
+.me-30 { margin-right: 30px !important; }
+.me-40 { margin-right: 40px !important; }
+.me-50 { margin-right: 50px !important; }
+
+.mx-0 { margin-left:0px !important; margin-right: 0px !important; }
+.mx-10 { margin-left:10px !important; margin-right: 10px !important; }
+.mx-20 { margin-left:20px !important; margin-right: 20px !important; }
+.mx-30 { margin-left:30px !important; margin-right: 30px !important; }
+.mx-40 { margin-left:40px !important; margin-right: 40px !important; }
+.mx-50 { margin-left:50px !important; margin-right: 50px !important; }
+
+.my-0 { margin-top:0px !important; margin-bottom: 0px !important; }
+.my-10 { margin-top:10px !important; margin-bottom: 10px !important; }
+.my-20 { margin-top:20px !important; margin-bottom: 20px !important; }
+.my-30 { margin-top:30px !important; margin-bottom: 30px !important; }
+.my-40 { margin-top:40px !important; margin-bottom: 40px !important; }
+.my-50 { margin-top:50px !important; margin-bottom: 50px !important; }
+
+
+.p-0 { padding: 0px !important; }
+.p-10 { padding: 10px !important; }
+.p-20 { padding: 20px !important; }
+.p-30 { padding: 30px !important; }
+.p-40 { padding: 40px !important; }
+.p-50 { padding: 50px !important; }
+
+.pt-0 { padding-top: 0px !important; }
+.pt-10 { padding-top: 10px !important; }
+.pt-20 { padding-top: 20px !important; }
+.pt-30 { padding-top: 30px !important; }
+.pt-40 { padding-top: 40px !important; }
+.pt-50 { padding-top: 50px !important; }
+
+.pb-0 { padding-bottom: 0px !important; }
+.pb-10 { padding-bottom: 10px !important; }
+.pb-20 { padding-bottom: 20px !important; }
+.pb-30 { padding-bottom: 30px !important; }
+.pb-40 { padding-bottom: 40px !important; }
+.pb-50 { padding-bottom: 50px !important; }
+
+.ps-0 { padding-left: 0px !important; }
+.ps-10 { padding-left: 10px !important; }
+.ps-20 { padding-left: 20px !important; }
+.ps-30 { padding-left: 30px !important; }
+.ps-40 { padding-left: 40px !important; }
+.ps-50 { padding-left: 50px !important; }
+
+.pe-0 { padding-right: 0px !important; }
+.pe-10 { padding-right: 10px !important; }
+.pe-20 { padding-right: 20px !important; }
+.pe-30 { padding-right: 30px !important; }
+.pe-40 { padding-right: 40px !important; }
+.pe-50 { padding-right: 50px !important; }
+
+.px-0 { padding-left:0px !important; padding-right: 0px !important; }
+.px-10 { padding-left:10px !important; padding-right: 10px !important; }
+.px-20 { padding-left:20px !important; padding-right: 20px !important; }
+.px-30 { padding-left:30px !important; padding-right: 30px !important; }
+.px-40 { padding-left:40px !important; padding-right: 40px !important; }
+.px-50 { padding-left:50px !important; padding-right: 50px !important; }
+
+.py-0 { padding-top:0px !important; padding-bottom: 0px !important; }
+.py-10 { padding-top:10px !important; padding-bottom: 10px !important; }
+.py-20 { padding-top:20px !important; padding-bottom: 20px !important; }
+.py-30 { padding-top:30px !important; padding-bottom: 30px !important; }
+.py-40 { padding-top:40px !important; padding-bottom: 40px !important; }
+.py-50 { padding-top:50px !important; padding-bottom: 50px !important; }
+
+
+/*
+    테이블 디자인
+    - table이라는 클래스가 붙는 경우만 디자인하도록 설계
+    - table은 전체와 칸에 테두리가 따로 적용된다(나눠져있다, seperate)
+*/
+.table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%;
+}
+
+/*
+    .table 안에 있는 td와 th에만 디자인을 적용하는 방법
+    (1) 후손 선택자
+        - .table th 라고 작성하면 .table 안에있는 모든 th를 선택
+        - .table td 라고 작성하면 .table 안에 있는 모든 td를 선택
+        - 작성이 편하지만 테이블이 중첩되면 문제가 생김(범용성↓)
+    (2) 자식 선택자
+        - .table > tbody > tr > td 라고 작성하면 순서대로 따라가서 나오는 td를 선택
+        - 작성이 까다롭지만 정확한 대상을 지정할 수 있음(범용성↑)
+*/
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td
+{
+    text-align: center;
+    padding: 0.25em;
+}
+
+/*
+    테이블 확장 스타일 - 테두리가 있는 테이블
+*/
+.table.table-border > thead > tr > th, 
+.table.table-border > thead > tr > td, 
+.table.table-border > tbody > tr > th, 
+.table.table-border > tbody > tr > td, 
+.table.table-border > tfoot > tr > th, 
+.table.table-border > tfoot > tr > td 
+{
+    border:1px solid #2d3436;
+}
+
+/*
+    테이블 확장 스타일 - 줄무늬 테이블
+    - 제목줄에 배경을 설정하고 내용은 짝수줄만 배경 설정
+    - 제목줄에 배경을 설정하지 않고 내용은 홀수줄만 배경 설정
+*/
+.table.table-stripe > thead > tr,
+.table.table-stripe > tbody > tr:nth-child(2n) 
+{
+    background-color: #b2bec3;
+}
+
+/*
+    테이블 확장 스타일 - 마우스 반응 테이블
+    - 제목은 제외한 내용 줄만 마우스가 올라가면 색상이 변하도록 구현
+*/
+.table.table-hover > tbody > tr:hover {
+    background-color: #b2bec3;
+}
+
+/*
+    테이블 확장 스타일 - 가로줄무늬 테이블
+*/
+.table.table-horizontal {
+    border-top: 1px solid #2d3436;
+    border-bottom: 1px solid #2d3436;
+}
+.table.table-horizontal > thead {
+    border-bottom: 1px solid #2d3436;
+}
+.table.table-horizontal > tfoot
+{
+    border-top: 1px solid #2d3436;
+}
+/* :not() 을 이용하여 특정 대상을 선택에서 제거할 수 있다 */
+.table.table-horizontal > tbody > tr:not(tr:last-child) {
+    border-bottom: 1px solid #b2bec3;
+}
+
+/*
+    링크 디자인
+    - class="link"인 경우 디자인을 설정
+    - 방문한 경우의 색상은 :visitied 상태에 대해서 디자인을 하면 된다
+*/
+.link {
+    text-decoration: none;
+    color: #2d3436;
+    display: inline-block;
+}
+.link:hover {
+    color: #0984e3;
+}
+
+.link.link-animation {
+    /* 
+        transition을 통해 특정 속성의 변화 속도를 지정 
+        - transition : 적용항목 변화시간 변화방식;
+        - 변화방식은 크게 세 가지로 구분
+            - linear : 변화속도가 일정한 것
+            - ease-in, ease-out, ease-in-out은 시작과 끝을 부드럽게
+                - ease-in은 시작을 부드럽게
+                - ease-out은 끝을 부드럽게
+                - ease-in-out은 시작과 끝을 모두 부드럽게
+    */
+    /* transition: transform 0.2s ease-out; */
+    transition-property: transform, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+.link.link-animation:hover {
+    /* 
+        애니메이션 효과 추가
+        - display:inline 에서는 불가능
+        - transform 속성을 통해 원하는 작업을 부여
+        - transition 속성을 통해 움직임 정도를 구현
+    */
+    transform: scale(1.05);
+}
+
+/*
+    페이지 네비게이터 디자인
+    - .page-navigator 안에 있는 a태그에 대하여 디자인
+*/
+.page-navigator {
+    text-align: center;
+    font-size: 16px;
+}
+.page-navigator.page-navigator-small {
+    font-size: 12px;
+}
+.page-navigator.page-navigator-large {
+    font-size: 20px;
+}
+
+.page-navigator > a {
+    display: inline-block;
+    color: #2d3436;
+    text-decoration: none;
+/*     border: 1px solid #2d3436; */
+	border: 1px solid transparent;
+    padding: 0.5em;
+    font-size: inherit;
+    min-width: 2.5em;
+}
+
+/*
+    현재 페이지에 해당하는 번호에는 활성화 클래스인 on을 추가한다
+    단, off인 경우는 hover에서 제외한다
+*/
+.page-navigator > a.on ,
+.page-navigator > a:not(.off):hover
+{
+    color: #0984e3;
+    border-color: #0984e3;
+}
+
+/* off 클래스에 대한 효과 추가 */
+.page-navigator > a.off {
+	color: #b2bec3;
+	cursor: not-allowed;
+}
+
+/* 이미지 디자인 */
+.image-circle {
+    border-radius: 50%;
+}
+.image-round {
+    border-radius: 5px;
+}
+.image-grayscale {
+    filter:grayscale(100%);
+}
+.image-blur {
+    opacity: 0.5; /*불투명도 - 1(100%), 0(0%) */
+    transition: opacity 0.1s linear;
+}
+.image-blur.hover:hover {
+    opacity: 1;
+}
+.image-shadow {
+    /* box-shadow : x위치 y위치 번짐 확대 색상; */
+    box-shadow: 5px 5px 0 0 #2d3436;
+}
+.image-lift {
+    box-shadow: 0 0 2px 1px #2d3436;
+}
+
+/*
+    relative를 이용한 디자인
+*/
+.effect-lift {
+    position: relative;
+    z-index: 99;
+    transition: bottom 0.1s ease-out; 
+    bottom: 0px;
+}
+.effect-lift:hover {
+    bottom: 2px;
+}
+
+.effect-shake {
+    position: relative;
+    z-index: 99;
+}
+.effect-shake:hover {
+    /* animation : 애니메이션이름 타이밍 실행시간 반복횟수 [기타옵션] */
+    animation: shake linear 0.25s infinite;
+}
+
+/* 움직임에 대한 상세한 시나리오 작성 */
+@keyframes shake {
+    0% { left: 0px; }
+    25% { left: -1px; }
+    50% { left: 0px; }
+    75% { left: 1px; }
+    100% { left: 0px; }
+}
+
+/*
+    화면 위의 화면(overlay) 디자인
+    뒤가 비치게 만드는 방법은 두 가지가 있다
+    (1) 불투명도(opacity) 조절 - 내용물도 영향을 받는다
+    (2) 배경색에 알파(alpha) 조절 - rgba 사용
+*/
+.overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+}
+.overlay > .container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+/*
+    오버레이 안에 배치되는 .component는 한가운데 위치하도록 구현
+    가운데 배치하는 방법도 여러 가지가 있다
+    (1) top, left, margin을 사용하는 방법
+    (2) top, left, transform을 사용하는 방법
+*/
+.overlay > .component {
+    position: absolute;
+
+    /* 
+        (1)번 방식 - 크기가 고정이어야 하지만 모든브라우저에서 작동 
+        top: 50%;
+        left: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+
+        (2)번 방식 - 크기와 무관하게 정렬되며 1번보다 안되는 경우가 있음
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+        (3)번 방식 - display:flex 사용하는 방법
+        (4)번 방식 - display:grid 사용하는 방법
+    */
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+/*  
+    글자 색상 디자인
+*/
+.red { color: #d63031 !important; }
+.orange { color: #fdcb6e !important;}
+.yellow { color: #ffeaa7 !important;}
+.green { color: #00b894 !important;}
+.skyblue { color: #74b9ff !important;}
+.blue {color: #0984e3 !important;}
+.purple {color: #6c5ce7 !important;}
+.black {color: #2d3436 !important;}
+.gray {color: #636e72 !important;}
+.white {color: white !important;}
+
+/* 
+    텍스트 한줄 + 말줄임표 스타일
+    다음 세 개의 스타일을 같이 사용하면 말줄임표 처리가 된다
+    단, 반드시 영역에 폭이 설정되어 있어야 한다
+*/
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*
+    메뉴는 계층형 구조(tree)이다
+    계층형 구조를 표현하기에 가장 적합한 태그는 list 태그이다
+    - <ul>은 순서가 없는 리스트 태그(unorder list)
+    - <ol>은 순서가 있는 리스트 태그(order list)
+*/
+
+/* 메뉴 안에 있는 모든 ul 태그에 대한 디자인 초기화 */
+.menu, 
+.menu ul {
+    list-style: none; /*list에 표기되는 모양 제거 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 여백 제거 */
+}
+.menu a {
+    color: inherit; /* 글자색상은 외부상태를 따라가겠다 */
+    text-decoration: none; /* 밑줄을 제거하겠다 */
+    display: inline-block; /* 크기 설정이 가능하도록 변경 */
+}
+
+/* 1차 메뉴(.menu > li)를 가로로 배치 */
+.menu > li {
+    display:inline-block;
+}
+
+/*
+    모든 메뉴는 li 안에 a와 ul이 있다
+    li끼리는 연관배치, ul은 절대배치를 사용한다
+*/
+.menu li {
+    position: relative;
+}
+.menu li > ul {
+    position: absolute;
+}
+
+/*
+    메뉴의 글자크기와 폭을 지정
+*/
+.menu,
+.menu ul {
+    background-color: #2d3436;
+}
+.menu li {
+    font-size: 20px;
+    width: 200px;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* 2차 이상의 메뉴(.menu li > ul)를 숨김 처리 */
+.menu li > ul {
+    display:none;
+}
+
+/* 
+    모든 메뉴(.menu li)에 
+    마우스가 올라가면(:hover) 
+    하위 메뉴(ul)를 표시하도록 처리 
+*/
+.menu li:hover > ul {
+    display: block; 
+}
+
+/* 모든 메뉴에 마우스가 올라가면 강조 표시 */
+.menu li:hover {
+    background-color: #636e72;
+}
+
+/* 2차 메뉴(ul)의 위치를 미세조정 */
+.menu > li > ul {
+    top:100%;
+    left: 0;
+}
+/* 3차 이상의 메뉴(ul)의 위치를 미세조정 */
+.menu > li > ul > li ul {
+    top: 0;
+    left: 100%;
+}
+
+/* 혹시 메뉴에 글자가 많아서 넘어가는 경우를 말줄임표 처리 */
+.menu a {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* menu-end 클래스가 붙은 메뉴 한 개만큼은 우측으로 붙여서 처리 */
+.menu {
+    /* 메뉴를 원하는 위치에 배치하고 싶다면 */
+    position: relative;
+
+    /* 메뉴를 상단에 고정하고 싶다면 */
+    /*
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    */
+}
+.menu li.menu-end {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* 우측 메뉴는 3차 이상의 메뉴가 왼쪽에 나오도록 처리 */
+.menu > li.menu-end > ul > li ul {
+    top: 0;
+    left: auto;
+    right: 100%;
+}
+
+/* 
+    float 모듈 디자인
+    - float를 사용하고 싶다면 div에 floating-cell이라는 클래스를 부여
+    - 영역이 끝나는 시점에 자동으로 clear를 수행하도록 디자인
+    - 가상 선택자인 ::after를 사용하여 강제 영역 생성 후 clear 수행
+*/
+.floating-cell::after {
+    content: ""; /* 태그 종료 시점의 가상영역을 생성하고 */
+    display: block; /* div처럼 block 상태로 만들고 */
+    clear: both; /* 사용한 float 속성을 모두 제거 */
+}
+/* floating-cell 내부의 항목들은 모두 float:left 처리 */
+.floating-cell > * {
+    float: left;
+}
+.floating-cell.reverse > * {
+    float: right;
+}
+
+
+/* flex layout 디자인 */        
+.flex-cell {
+    display: flex;
+}
+.flex-cell > .width-fill {
+    flex-grow: 1;
+}
+.flex-cell.auto-width > * {
+    flex-grow: 1;
+}
+.flex-cell.vertical {
+    flex-direction: column;
+}
+
+.flex-cell.middle {
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    입력창 피드백 디자인 
+    - 입력창 뒤에 피드백 영역이 있다면 판정 결과에 따라 표시되도록 구현
+*/
+.tool.success {
+    border-color: #00b894 !important;
+}
+.tool.fail,
+.tool.fail2,
+.tool.fail3 
+{
+    border-color: #d63031 !important;
+}
+.success-feedback {
+    color: #00b894;
+    display: none;
+}
+.fail-feedback, 
+.fail2-feedback,
+.fail3-feedback
+{
+    color: #d63031;
+    display: none;
+}
+
+.tool.success ~ .success-feedback,
+.tool.fail ~ .fail-feedback,
+.tool.fail2 ~ .fail2-feedback,
+.tool.fail3 ~ .fail3-feedback 
+{ 
+    display: block; 
+}
+
+/*
+    진행바(progressbar) 디자인
+*/
+.progressbar {
+    box-shadow: 0 0 1px 0 #ccc;
+}
+.progressbar > .guage {
+    width: 0%;
+    height: 5px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    transition: width 0.1s ease-out;
+}

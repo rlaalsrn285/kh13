@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+main {
+    width: 1100px;
+    margin:0 auto;
+}
+.header  {
+    padding: 10px;
+}
+.section {
+    display: flex;
+    min-height: 400px;
+}
+.aside {
+    width: 200px;
+    padding: 10px;
+}
+.article {
+    flex-grow: 1;
+    padding: 10px;
+}
+.footer {
+    padding: 10px;
+}
